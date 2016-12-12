@@ -22,7 +22,7 @@
       </li>
       <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
       <li><a class="w3-green" href="#"><i class="fa fa-search"></i></a></li>
-      <li class="w3-right"><button onclick="document.getElementById('id01').style.display='block'" class="w3-btn"><i class="  fa fa-sign-in"></i> Log In</button></li>
+      <li class="w3-right"><button onclick="init();" class="w3-btn"><i class="  fa fa-sign-in"></i> Log In</button></li>
     </ul>
     </div>
     <!-- open login -->
@@ -122,6 +122,13 @@ function openMode(evt, modeName) {
   evt.currentTarget.firstElementChild.className += " w3-border-red";
 }
 </script>
+
+ <script>
+        function init() {
+           document.getElementById('id01').style.display='block';
+           openMode(event, 'Login');
+        }
+     </script>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
