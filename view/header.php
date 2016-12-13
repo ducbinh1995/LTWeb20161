@@ -47,7 +47,7 @@
     <!-- login form -->
     <div id="Login" class="w3-container mode">
       <div class="w3-center"><br>        
-        <img src="img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+        <img src="image/img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
       </div>
 
       <form class="w3-container" action="form.asp">
@@ -66,7 +66,7 @@
     <!-- new account form -->
     <div id="New" class="w3-container mode">
       <div class="w3-center"><br>        
-        <img src="img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+        <img src="image/img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
       </div>
 
       <form class="w3-container" action="form.asp">
@@ -93,7 +93,7 @@
     <!-- reset password -->    
     <div id="Forgot" class="w3-container mode">
       <div class="w3-center"><br>        
-        <img src="img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+        <img src="image/img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
       </div>
 
       <form class="w3-container" action="form.asp">
