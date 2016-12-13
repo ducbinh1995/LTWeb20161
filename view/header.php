@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<title>Index</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body>
-<style>
-.mode {display:none;}
-</style>
+
+
+
+
+
+
+
+<header>
 <div class="w3-top">
   <ul class="w3-navbar w3-black">
       <li><a href="#"><i class="fa fa-home"></i></a></li>
@@ -137,4 +135,4 @@ function openMode(evt, modeName) {
     </div>
   </div>
  </div>
-</body>
+ </header>
