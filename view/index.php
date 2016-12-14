@@ -4,6 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
+  <script type="text/javascript" src="js/jquery.plugin.js"></script> 
+  <script type="text/javascript" src="js/jquery.countdown.js"></script>
 <style>
 .mySlides {display:none;}
 .mode {display:none;}
@@ -90,51 +94,31 @@ function showDivs(n) {
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    <div class="w3-quarter">
-      <img src="image/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="image/steak.jpg" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="image/cherries.jpg" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="image/wine.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
+    <?php  
+      require("card.php");
+      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$");
+      echo $newCard->getCard(); 
+      $newCard = new Card("image/steak.jpg","Steak","150.00$");
+      echo $newCard->getCard();
+      $newCard = new Card("image/cherries.jpg","Cherries","150.00$");
+      echo $newCard->getCard();
+      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$");
+      echo $newCard->getCard();
+    ?>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <img src="image/popsicle.jpg" alt="Popsicle" style="width:100%">
-      <h3>All I Need Is a Popsicle</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="image/salmon.jpg" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="image/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="image/croissant.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
+    <?php  
+      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$");
+      echo $newCard->getCard(); 
+      $newCard = new Card("image/steak.jpg","Steak","150.00$");
+      echo $newCard->getCard();
+      $newCard = new Card("image/cherries.jpg","Cherries","150.00$");
+      echo $newCard->getCard();
+      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$");
+      echo $newCard->getCard();
+    ?>
   </div>
 
   <!-- Pagination -->
