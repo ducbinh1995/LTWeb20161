@@ -95,13 +95,13 @@ function showDivs(n) {
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <?php  
-      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$");
+      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$","12/16/2016");
       echo $newCard->getCard(); 
-      $newCard = new Card("image/steak.jpg","Steak","150.00$");
+      $newCard = new Card("image/steak.jpg","Steak","150.00$","12/18/2016");
       echo $newCard->getCard();
-      $newCard = new Card("image/cherries.jpg","Cherries","150.00$");
+      $newCard = new Card("image/cherries.jpg","Cherries","150.00$","12/20/2016");
       echo $newCard->getCard();
-      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$");
+      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$","12/22/2016");
       echo $newCard->getCard();
     ?>
   </div>
@@ -109,13 +109,13 @@ function showDivs(n) {
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <?php  
-      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$");
+      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$","12/16/2016");
       echo $newCard->getCard(); 
-      $newCard = new Card("image/steak.jpg","Steak","150.00$");
+      $newCard = new Card("image/steak.jpg","Steak","150.00$","12/16/2016");
       echo $newCard->getCard();
-      $newCard = new Card("image/cherries.jpg","Cherries","150.00$");
+      $newCard = new Card("image/cherries.jpg","Cherries","150.00$","12/16/2016");
       echo $newCard->getCard();
-      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$");
+      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$","12/16/2016");
       echo $newCard->getCard();
     ?>
   </div>
