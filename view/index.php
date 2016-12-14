@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
   <script type="text/javascript" src="js/jquery.plugin.js"></script> 
   <script type="text/javascript" src="js/jquery.countdown.js"></script>
@@ -13,7 +13,7 @@
 .mode {display:none;}
 </style>
 <!-- header -->
-<?php require("header.php"); ?>
+<?php require("header.php"); require("card.php");?>
 <body>
 
 <!-- hot product -->
@@ -95,7 +95,6 @@ function showDivs(n) {
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <?php  
-      require("card.php");
       $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$");
       echo $newCard->getCard(); 
       $newCard = new Card("image/steak.jpg","Steak","150.00$");

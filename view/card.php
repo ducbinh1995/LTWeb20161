@@ -1,9 +1,5 @@
-<script type="text/javascript" src="http://yourjavascript.com/88131111995/jquery.countdown.js">$(document).ready(function () {
-    $('#timer').countdown({
-        until: new Date(2017, 12 - 1, 1),
-        format: 'd H M S'
-    });
-});</script>
+<script type="text/javascript" src="http://yourjavascript.com/88131111995/jquery.countdown.js">
+</script>
 <?php  
 	/**
 	* 
@@ -31,3 +27,11 @@
 
 	}
 ?>
+<script type="text/javascript">
+	$(document).ready(function () {
+	    $('#timer').countdown({
+	        until: new Date(2020, 8 - 1, 8),
+	        format: 'd H M S'
+	    });
+	});
+</script>
