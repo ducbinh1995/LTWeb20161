@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 <header>
 <div class="w3-top">
   <ul class="w3-navbar w3-black">
@@ -126,7 +120,7 @@ function openMode(evt, modeName) {
            document.getElementById('id01').style.display='block';
            openMode(event, 'Login');
         }
-     </script>
+  </script>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>

@@ -6,11 +6,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .mySlides {display:none;}
+.mode {display:none;}
 </style>
-
-<body>
 <!-- header -->
 <?php require("header.php"); ?>
+<body>
 
 <!-- hot product -->
 <div class="w3-display-container">
@@ -150,9 +150,10 @@ function showDivs(n) {
 </div>
 
 
+
+</body>
 <!-- footer -->
 <?php require("footer.php"); ?>
-</body>
 </html>
 
 
