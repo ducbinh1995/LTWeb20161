@@ -28,13 +28,16 @@
 
 	}
 ?>
-<script type="text/javascript">
+	<script type="text/javascript">
 		$(document).ready(function(){
-			$(".timer").countdown("2017/01/01", function(event) {
-				$(this).text(
-					event.strftime('%D days %H:%M:%S')
-				);
-			});
+			$.post("test.php", function(data){
+				$(".timer").countdown(data, function(event) {
+					$(this).text(
+						event.strftime('%D days %H:%M:%S')
+						);
+				});
+			})
+
 		});
 
-</script>
+	</script>

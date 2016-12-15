@@ -1,5 +1,7 @@
 <?php
 	
+	require('../connection.php');	
+
 	abstract class Model {
 
 		public function __construct($data){
@@ -18,7 +20,7 @@
 			$table_key = "";
 			$prepare_key = "";
 			$bind_array = array();
-			$table_name = self::getTableName();
+			$table_name = static::getTableName();
 
 			foreach($data as $data_key => $data_value){
 				$table_key = $table_key . ", `" . $data_key . "`";
@@ -61,10 +63,10 @@
 			return new $table_name($result);
 		}
 
-		public static function find() {
+		public static function find($filter) {
 
 			$list = array();
-			$table_name = self::getTableName();
+			$table_name = static::getTableName();
 
 			$db = DB::getInstance();
 			$statement = $db->prepare("SELECT * FROM `" . $table_name . "`");
@@ -74,7 +76,7 @@
 			foreach($result as $re){
 				array_push($list, new $table_name($re));
 			}
-			return $list;
+			return array_filter($list, $filter);
 
 		}
 

@@ -42,13 +42,13 @@
         <img src="image/img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
       </div>
 
-      <form class="w3-container" action="form.asp">
+      <form class="w3-container" method="post" action="../controller/user_control.php">
         <div class="w3-section">
           <label><b>Username</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
           <label><b>Password</b></label>
           <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
-          <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">Login</button>
+          <button class="w3-btn-block w3-green w3-section w3-padding" name="login" type="submit">Login</button>
           <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
         </div>
       </form>

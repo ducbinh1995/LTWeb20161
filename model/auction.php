@@ -1,33 +1,34 @@
 <?php 
+	
+	require("model.php");
 
 	class Auction extends Model {
 
 		protected $auction_id;
 		protected $user_id;
 		protected $product_id;
-		protected $created;
-		protected $image;
-		protected $step;
+		public $created;
+		public $image;
+		public $step;
 		public $current_price;
 		public $start_date;
  		public $end_date;
- 		public $product_name;
+ 		public $product;
 		
+ 		public function __construct($data) {
+ 			$product = Product::findById($data["product_id"]);
+ 			$data["product"] = $product;
+ 			foreach($data as $key => $value) {
+ 				$data->$key = $value;
+ 			}
+ 		}
+
 		public static function getTableName() {
 			return "auction";
 		}
-		
+
 		public function getId() {
 			return $this->auction_id;
-		}
-
-		public static function all() {
-			$auctions = self::find();
-			foreach($auctions as $auction){
-				$product = Product::findById($auction->product_id);
-				$auction->product_name = $product->product_name;
-			}
-			return $auctions;
 		}
 
 		public function bid($price)
