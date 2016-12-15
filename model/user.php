@@ -22,7 +22,7 @@ class User extends Model {
 
 	public static function login($data) {
 
-			//session_start();
+			session_start();
 
 		$db = DB::getInstance();
 		$statement = $db->prepare("SELECT `user_id` from `user` where `user_name` = :username and `password` = :password");

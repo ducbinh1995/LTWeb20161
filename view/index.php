@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <title>Index</title>
@@ -13,7 +14,8 @@
 .mode {display:none;}
 </style>
 <!-- header -->
-<?php if(isset($_SESSION["current_user"])){
+<?php 
+  if(isset($_SESSION["current_user"])){
     require("nheader.php");
   } else {
     require("header.php");
