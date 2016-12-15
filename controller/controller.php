@@ -1,5 +1,6 @@
 <?php
 require "../view/alert.php";
+require "../model/product.php";
 require_once("../model/user.php");
 require_once("../model/auction.php");
 require_once("../model/category.php");
@@ -56,6 +57,14 @@ class controller {
 	public static function category_control(){
 		$list_category = Category::find(null);
 		return $list_category;
+	}
+	public static function user_product() {
+		session_start();
+		function test($var) {
+			return $var->owner_id==$_SESSION["current_user"];
+		}
+		$_POST['curr_usr_product']=Product::find("test");
+		require("../view/list_products.php");
 	}
 }
 ?>
