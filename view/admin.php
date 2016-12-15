@@ -56,7 +56,7 @@
 	<div class="w3-padding-large" id="main">
 	<div class="w3-container" id="info">
 		<h1 class="w3-xxxlarge w3-text-green"><b>User Information</b></h1>
-		<form class="w3-container" action="form.asp">
+
         <div class="w3-section">
           <label><b>Username</b></label>
           <?php
@@ -78,9 +78,10 @@
           <?php
            echo "<p class=\"lead\"> $p_num </p>" ;
        		?>
-          <button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" type="submit">Update</button>
+          <a  href="edit.php"><button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top">Edit</button></a>
         </div>
-      </form>
+
+      
 	</div><hr>
 
 	<div class="w3-container" id="products">

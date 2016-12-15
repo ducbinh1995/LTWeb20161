@@ -97,7 +97,7 @@
 			$setStr = substr($setStr, 0, -1);
 
 			$db = DB::getInstance();
-			$statement = $db->prepare("UPDATE `" . static::$tableName . "` SET " . $setStr . " WHERE " . static::$tableName . "_id = " . $this->getId() );
+			$statement = $db->prepare("UPDATE `" . $table_name . "` SET " . $setStr . " WHERE " . $table_name . "_id = " . $this->getId() );
 			$statement->execute($bind_array);
 
 		}

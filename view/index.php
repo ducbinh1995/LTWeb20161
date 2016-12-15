@@ -123,12 +123,14 @@ function showDivs(n) {
       }
       else{
         $page = 1;
+
         for ($i=($page-1)*8; $i < $page*8-3; $i++) {
           if ($i >= count($list)) {
              break;
           } 
           $result = $list[$i];
           $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
+
           echo $newCard->getCard();
         }
       }
@@ -146,6 +148,7 @@ function showDivs(n) {
           } 
           $result = $list[$i];
           $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
+
           echo $newCard->getCard();
         }
       }
