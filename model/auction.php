@@ -1,4 +1,6 @@
 <?php 
+	
+	require("model.php");
 
 	class Auction extends Model {
 

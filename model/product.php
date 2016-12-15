@@ -1,5 +1,7 @@
 <?php 
 
+require("product.php");
+
 class Product extends Model {
 
 	public $product_id;
