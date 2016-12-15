@@ -17,4 +17,8 @@
 			echo $signup_fail_alert->getAlert();
 		}
 	}
+	if(isset($_POST['usrname'])&&isset($_POST['email'])&&isset($_POST['reset_psw'])) {
+		$reset_psw_alert = new Alert("Your Password is 123456");
+			echo $reset_psw_alert->getAlert();
+	}
 ?>
