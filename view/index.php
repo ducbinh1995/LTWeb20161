@@ -117,20 +117,18 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
           echo $newCard->getCard();
         }
       }
       else{
         $page = 1;
-        echo json_encode($list);
-        echo count($list);
         for ($i=($page-1)*8; $i < $page*8-3; $i++) {
           if ($i >= count($list)) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
           echo $newCard->getCard();
         }
       }
@@ -147,7 +145,7 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
           echo $newCard->getCard();
         }
       }

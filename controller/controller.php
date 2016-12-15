@@ -4,6 +4,8 @@ require "../model/product.php";
 require_once("../model/user.php");
 require_once("../model/auction.php");
 require_once("../model/category.php");
+require_once("../model/model.php");
+require_once("../model/product.php");
 
 class controller {
 	public $user;	
@@ -27,17 +29,20 @@ class controller {
 	}
 
 	public static function show_users() {
-
-		
-		
 		header("Location: ../view/all_user.php");
-		
 	}
 
 	public static function logout_control() {
 		session_start();
 		User::logout();
 		header("Location: ../view/index.php");
+	}
+
+	public static function signup_control() {
+		$usrname=$_POST['usrname'];
+		$psw=$_POST['psw'];
+		$data=array("user_name" => $usrname, "password" => $psw);
+		User::create($data);
 	}
 
 	public static function auction_control() {
@@ -57,6 +62,7 @@ class controller {
 		$list_category = Category::find(null);
 		return $list_category;
 	}
+
 	public static function user_product() {
 		session_start();
 		function test($var) {
@@ -64,6 +70,14 @@ class controller {
 		}
 		$_POST['curr_usr_product']=Product::find("test");
 		header("Location:../view/list_products.php");
+	}
+
+	public static function product_control(){
+		function filter($var){
+			return $var->product_id = $_GET["product_id"];
+		}
+		$product = Product::find("filter");
+		return $product;
 	}
 }
 ?>
