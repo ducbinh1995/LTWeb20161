@@ -1,6 +1,7 @@
 <?php
 	require "controller.php";
 	
-	
-	controller::user_control();
+	if(isset($_POST['usrname'])&&isset($_POST['psw'])&&isset($_POST['login'])) {
+		controller::login_control();
+	}
 ?>
