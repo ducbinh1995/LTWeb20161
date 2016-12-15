@@ -4,97 +4,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.picture {display:none}
-.mode {display:none;}
-</style>
-<!-- header -->
 <?php require("header.php"); ?>
-<body class="w3-light-grey">
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<body>
 
-	<div class="w3-row">
-		<div class="w3-col l8">
-			<div class="w3-card-4 w3-margin w3-white">
-			<h2 class="w3-container w3-section w3-leftbar w3-border-green w3-pale-green"><b>ĐỒNG TIỀN XƯƠNG MÁU </b></h2><br>
-				<div class="w3-row">
-					<div class="w3-half">
-						<!-- image -->
+	<div class="w3-display-container">
 
-						<div class="w3-margin">
-<div class="w3-row">
-  <div class="w3-col s4 w3-container">
-  <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('pro1');">
-    <img src="image/pro1.jpg" alt="pro1" style="width:100%">
-  </a>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="image/1.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+    </div>
   </div>
-  <div class="w3-col s4 w3-container">
-    <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('pro2');">
-      <img src="image/pro2.jpg" alt="pro2" style="width:100%">
-    </a>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="image/2.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+    </div>
   </div>
-  <div class="w3-col s4 w3-container">
-    <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('pro3');">
-      <img src="image/pro3.jpg" alt="pro3" style="width:100%">
-    </a>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="image/3.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">  
+    </div>
   </div>
-<!--   <div class="w3-col s3 w3-container">
-    <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('pro4');">
-      <img src="image/pro4.jpg" alt="pro4" style="width:100%">
-    </a>
-  </div> -->
-</div><br>
 
-<div id="pro1" class="picture w3-display-container">
-  <img src="image/pro1wide.jpg" alt="pro1" style="width:100%">
-  
+
+  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
 </div>
-
-<div id="pro2" class="picture w3-display-container">
-  <img src="image/pro2wide.jpg" alt="pro2" style="width:100%">
-  
-</div>
-
-<div id="pro3" class="picture w3-display-container">
-  <img src="image/pro3wide.jpg" alt="pro3" style="width:100%">
-  
-</div>
-
-<!-- <div id="pro4" class="picture w3-display-container">
-  <img src="image/pro4wide.jpg" alt="pro4" style="width:100%">
-  
-</div>
- -->
-
-
 
 <script>
-openImg("pro1")
-function openImg(imgName) {
-  var i, x;
-  x = document.getElementsByClassName("picture");
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); // Change image every 3 seconds
+}
+</script>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
+     x[i].style.display = "none";  
   }
-  document.getElementById(imgName).style.display = "block";
+  x[slideIndex-1].style.display = "block";  
 }
 </script>
 
+<div class="w3-padding-64 w3-dark-grey">
+	<div class="w3-container">
+		<h1 class="w3-xxxlarge w3-text-red"><b>Product name</b></h1>
+		<h3>THE TWENTYFOURTH COIN IN THE HISTORIC PRESIDENTIAL GOLDEN DOLLAR SERIES</h3>
+		<p>Building on the success of the 50 State Quarter Series in 2007 the US Mint released the first coin in their new Presidential Series of One Dollar Coins struck using a metal combination of a pure copper core with an outer layer of manganese brass, giving this coin it's distinctive golden hue. Rarely encountered in circulation, these beautiful coins recognize the spirit of Liberty and Democracy by depicting each US President on the obverse and the Statue of Liberty on the reverse. Scheduled to be released at a rate of 4 coins per year, this is the twentyfourth coin in the series, honoring the secondt term of Grover Cleveland our 22nd and 24th President.  </p>
+		<h3>ABOUT THE SECOND TERM OF GROVER CLEVELAND, OUR TWENTYFOURTH PRESIDENT</h3>
+		<p>The first Democrat elected after the Civil War, Grover Cleveland was the only President to leave the White House and return for a second term four years later.<br>
 
+One of nine children of a Presbyterian minister, Cleveland was born in New Jersey in 1837 and raised in upstate New York. As a lawyer in Buffalo, he became notable for his single-minded concentration. Running as a reformer, he was elected mayor of Buffalo in 1881 and later, governor of New York. He first won the presidency in 1884 with the combined support of Democrats and reform Republicans known as the "Mugwumps."<br>
 
+After losing the presidency to Benjamin Harrison in 1888, he was returned to office in 1892. As the 24th President, Cleveland faced an economic depression. He dealt directly with the financial crisis rather than with business failures, farm mortgage foreclosures and unemployment. He obtained repeal of the mildly inflationary Sherman Silver Purchase Act and, with the aid of Wall Street, maintained the Treasury Department's gold reserve.<br>
 
+When railroad strikers in Chicago violated an injunction, Cleveland sent federal troops to enforce it. His blunt treatment of the railroad strikers stirred the pride of many Americans, as did the vigorous way he forced Great Britain to accept arbitration of a disputed boundary in Venezuela. But overall, his policies during the depression were unpopular, and in 1896, his party instead nominated William Jennings Bryan. After leaving the White House the second time, Cleveland lived in retirement in Princeton, New Jersey, and died in 1908.<br>
 
+Coinage Legislation under President Glover Cleveland (second term)</p>
+	</div>
+</div>
 
-
-
-
-
-						</div>
-					</div>
-
-					<div class="w3-half">
-						<!-- price -->
-						<div class="w3-margin">
+<div class="w3-padding-64 w3-light-grey">
+<div class="w3-container">
+<h1 class="w3-xxxlarge w3-text-green"><b>Bid now</b></h1>
+	
 						<ul class="w3-ul">
   							<li><b>Number of Bids:</b></li>
   							<li><b>Bid Increment:</b></li>
@@ -105,91 +98,43 @@ function openImg(imgName) {
  							<li><b>Close Date:</b></li>
 						</ul>
 						<br>
-						<button class="w3-btn w3-green w3-border">Button</button>
+						<button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge">Button bid</button>
 						</div>
-					</div>
-				
-				</div>
 
-			</div>
-
-			<div class="w3-card-4 w3-margin w3-white">
-			<!-- content -->
-
-
-
-
-
-  <ul class="w3-navbar w3-pale-green">
-    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Description');">Description</a></li>
-    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Warranty');">Warranty</a></li>
-    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Shipping');">Shipping cost</a></li>
-  </ul>
-
-  <div id="Description" class="w3-container w3-border mode">
-    <h2>US MINT PEACE SILVER DOLLAR DATED BETWEEN 1921 AND 1935</h2>
-    <p>LHere is a marvelous opportunity to own the last SILVER Dollar made for US commerce. Happy that World War 1 was finally over, the American public lobbied the government to issue a coin commemorating the fact that the world was finally at peace. In 1921 the Peace Silver Dollar was born.
- 
-	Designed by Anthony DeFrancisci, the coin was the result of a competition to find designs emblematic of peace. The obverse represents the head and neck of the Goddess of Liberty in profile with the legend "In God We Trvst". This was not a spelling error but intentionally used the classic Roman letter "V" in place of the "U" in Trust. On the reverse depicts a bald eagle resting on a mountaintop clutching an olive branch, with the legend "Peace" written below. It was the last United States dollar coin to be struck for circulation in silver.
-	Destined to be a great investment, not only for their timeless beauty but also for the fact that each coin contains of 3/4 of an ounce of pure silver. Minted at the Philadelphia, Denver and San Francisco Mints, you can find the mintmark to the left of the Eagle's tail feathers on the reverse as in the picture below. Coins minted in Philadelphia did not have a mintmark.</p>
-  </div>
-
-  <div id="Warranty" class="w3-container w3-border mode">
-    <p>See Standard Notice</p> 
-  </div>
-
-  <div id="Shipping" class="w3-container w3-border mode">
-    <h4>Shipping charges will be added to the final bid price of each item. The shipping rates are:</h4>
-    <ul class="w3-ul">
-  		<li>Continental U.S. = $6.87</li>
-  		<li>Alaska, Hawaii = $6.87</li>
- 		<li>Ha Noi, Viet Nam = $69.98</li>
-	</ul>
-  </div>
 </div>
 
-<script>
-openCity(event, 'Description')
-function openCity(evt, modeName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("mode");
-  for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" w3-green", "");
-  }
-  document.getElementById(modeName).style.display = "block";
-  evt.currentTarget.className += " w3-green";
-}
-</script>
+<div class="w3-padding-64 w3-white">
+<div class="w3-container w3-center">
+<h1 class="w3-jumbo"><b>Related</b></h1>
+<div class="w3-row-padding w3-padding-16 w3-center" >
+    <div class="w3-quarter">
+      <img src="image/sandwich.jpg" alt="Sandwich" style="width:100%">
+      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="image/steak.jpg" alt="Steak" style="width:100%">
+      <h3>Let Me Tell You About This Steak</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="image/cherries.jpg" alt="Cherries" style="width:100%">
+      <h3>Cherries, interrupted</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <p>What else?</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="image/wine.jpg" alt="Pasta and Wine" style="width:100%">
+      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
 
 
-
-
-
-
-			</div>
-
-		<div class="w3-col l4">
-        <div class="w3-card-2 w3-margin w3-margin-top w3-green w3-center">
-        <h2>Related product</h2>
-        </div>
-  			<div class="w3-card-2 w3-margin w3-margin-top w3-white">
-  			<img src="image/popsicle.jpg" alt="Popsicle" style="width:100%">
-        <h3>All I Need Is a Popsicle</h3>
-        <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-  			</div>
-        <div class="w3-card-2 w3-margin w3-margin-top w3-white ">
-        <img src="image/salmon.jpg" alt="Salmon" style="width:100%">
-        <h3>Salmon For Your Skin</h3>
-        <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
-  		</div>	
-		</div>
 </div>
+</div>
+
+
 </body>
-<!-- footer -->
-<?php require("footer.php"); ?> 
+<?php require("footer.php"); ?>
 </html>
