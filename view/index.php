@@ -13,28 +13,34 @@
 .mode {display:none;}
 </style>
 <!-- header -->
-<?php require("header.php"); require("card.php");?>
+<?php if(isset($_SESSION["current_user"])){
+    require("nheader.php");
+  } else {
+    require("header.php");
+  }
+  require("card.php");
+?>
 <body>
 
 <!-- hot product -->
 <div class="w3-display-container">
 
   <div class="mySlides w3-display-container w3-center">
-    <img src="image/1.jpg" style="width:100%">
+    <img src="<?php $_SERVER['DOCUMENT_ROOT'] . "/view/" ?>image/1.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>Los Angeles</h3>
       <p><b>We had the best time playing at Venice Beach!</b></p>   
     </div>
   </div>
   <div class="mySlides w3-display-container w3-center">
-    <img src="image/2.jpg" style="width:100%">
+    <img src="<?php $_SERVER['DOCUMENT_ROOT'] . "/view/" ?>image/2.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>New York</h3>
       <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
     </div>
   </div>
   <div class="mySlides w3-display-container w3-center">
-    <img src="image/3.jpg" style="width:100%">
+    <img src="<?php $_SERVER['DOCUMENT_ROOT'] . "/view/" ?>image/3.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>Chicago</h3>
       <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
