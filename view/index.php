@@ -16,7 +16,7 @@
 <!-- header -->
 <?php 
   if(isset($_SESSION["current_user"])){
-    require("nheader.php");
+    require_once("nheader.php");
   } else {
     require("header.php");
   }

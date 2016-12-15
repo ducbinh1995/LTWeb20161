@@ -6,4 +6,7 @@
 	}
 	if(isset($_GET['logout']))
 		controller::logout_control();
+
+	if(isset($_GET['show_user']))
+		controller::show_users();
 ?>

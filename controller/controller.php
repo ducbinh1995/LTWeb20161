@@ -24,6 +24,14 @@ class controller {
 		}
 	}
 
+	public static function show_users() {
+
+		
+		
+		header("Location: ../view/all_user.php");
+		
+	}
+
 	public static function logout_control() {
 		session_start();
 		User::logout();
