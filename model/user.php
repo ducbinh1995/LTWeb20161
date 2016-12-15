@@ -12,8 +12,6 @@
 		public $first_name;
 		public $last_name;
 
-		protected static $tableName = 'user';
-
 		public static function getTableName() {
 			return "user";
 		}

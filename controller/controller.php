@@ -6,7 +6,7 @@ class controller {
  
      public function __construct()  
      {  
-          $this->user = new User();
+          $this->user = User::findById($_SESSION["current_user"]);
      } 
 
 	public function user_control() {
@@ -14,7 +14,7 @@ class controller {
 			$usrname=$_POST['usrname'];
 			$psw=$_POST['psw'];
 			$data=array("username" => $usrname, "password" => $psw);
-			$this->user->login($data);
+			User::login($data);
 		}
 	}
 }
