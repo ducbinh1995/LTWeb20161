@@ -42,7 +42,7 @@
         <img src="image/img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
       </div>
 
-      <form class="w3-container" action="form.asp">
+      <form class="w3-container" method="post" action="../controller/controller.php">
         <div class="w3-section">
           <label><b>Username</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
