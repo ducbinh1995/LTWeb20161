@@ -1,8 +1,9 @@
 <?php
-require "../view/alert.php";
+require ("../view/alert.php");
+require("../model/product.php");
 include_once("../model/user.php");
 
-class controller {
+class Controller {
 	public $user;	
      public function __construct()  
      {  
@@ -28,6 +29,14 @@ class controller {
 		session_start();
 		User::logout();
 		header("Location: ../view/index.php");
+	}
+
+	public static function user_product() {
+		function test($var) {
+			$var->owner_id==$_SESSION["current_user"];
+		}
+		Product::find("test");
+
 	}
 }
 ?>

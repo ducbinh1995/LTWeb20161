@@ -9,7 +9,7 @@ class Product extends Model {
 	public $description;
 	public $category_id;
 	public $image;
-	protected $owner_id;
+	public $owner_id;
 	public $status;
 
 	public static function getTableName() {
