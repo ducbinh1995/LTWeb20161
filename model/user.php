@@ -29,9 +29,10 @@ class User extends Model {
 		$statement->execute(array(':username' => $data["username"], ':password' => $data["password"]));
 		$result = $statement->fetch(PDO::FETCH_ASSOC);
 		if(isset($result["user_id"])){
+			return true;
 			$_SESSION["current_user"] = $result["user_id"];
 		} else {
-			die("login fail");
+			return false;
 		}
 	}
 
