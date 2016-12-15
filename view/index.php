@@ -123,7 +123,6 @@ function showDivs(n) {
       }
       else{
         $page = 1;
-        
         for ($i=($page-1)*8; $i < $page*8-3; $i++) {
           if ($i >= count($list)) {
              break;

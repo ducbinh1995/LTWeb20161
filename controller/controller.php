@@ -3,6 +3,8 @@ require "../view/alert.php";
 require_once("../model/user.php");
 require_once("../model/auction.php");
 require_once("../model/category.php");
+require_once("../model/model.php");
+require_once("../model/product.php");
 
 class controller {
 	public $user;	
@@ -30,11 +32,7 @@ class controller {
 	}
 
 	public static function show_users() {
-
-		
-		
 		header("Location: ../view/all_user.php");
-		
 	}
 
 	public static function logout_control() {
@@ -48,8 +46,6 @@ class controller {
 		$psw=$_POST['psw'];
 		$data=array("user_name" => $usrname, "password" => $psw);
 		User::create($data);
-		$signup_alert = new Alert("Sign up success! Log in to bid.");
-		echo $signup_alert->getAlert();
 	}
 
 	public static function auction_control() {
@@ -73,14 +69,14 @@ class controller {
 	public static function category_control(){
 		$list_category = Category::find(null);
 		return $list_category;
-		//header("Location: ../view/create.php");
 	}
+
 	public static function user_product() {
 		session_start();
 		function test($var) {
 			return $var->owner_id==$_SESSION["current_user"];
 		}
-		//$_POST['curr_usr_product']=Product::find("test");
+		$_POST['curr_usr_product']=Product::find("test");
 		header("Location:../view/list_products.php");
 	}
 

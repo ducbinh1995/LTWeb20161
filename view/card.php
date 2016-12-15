@@ -18,10 +18,14 @@
 		}
 
 		public function getCard(){
+			$auction = Auction::findById($this->auction_id);
+			
+			
 			$this->card .= "<html><div class = \"w3-quarter\">
 			<a href=\"product.php?auction_id=".$this->auction_id."\"><img src=".$this->image." alt = \"$this->name\" style=\"width:100%\"></a>
 			<h3>$this->name</h3>
-			<p>Price to bid: $this->price_to_bid$</p>
+			<p>Price now: $this->price_to_bid$</p>
+			<p>Belong_to: hai </p>
 			<p class = \"w3-text-red timer\"></p>
 			</div></html>";
 			return $this->card;

@@ -55,8 +55,8 @@
 
 	<div class="w3-padding-large" id="main">
 	<div class="w3-container" id="info">
-		<h1 class="w3-xxxlarge w3-text-green"><b>User Information</b></h1>+
-		<form class="w3-container" action="form.asp">
+		<h1 class="w3-xxxlarge w3-text-green"><b>User Information</b></h1>
+
         <div class="w3-section">
           <label><b>Username</b></label>
           <?php

@@ -26,6 +26,10 @@
     <?php  
       echo "<img src=".$prod->product->image." style=\"width:100%\">";
     ?>
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+    </div>
+  </div>
+
 </div>
 
 <script>
