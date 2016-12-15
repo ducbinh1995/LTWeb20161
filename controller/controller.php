@@ -43,6 +43,8 @@ class controller {
 		$psw=$_POST['psw'];
 		$data=array("user_name" => $usrname, "password" => $psw);
 		User::create($data);
+		$signup_alert = new Alert("Sign up success! Log in to bid.");
+		echo $signup_alert->getAlert();
 	}
 
 	public static function auction_control() {
