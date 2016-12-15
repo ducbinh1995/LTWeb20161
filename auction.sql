@@ -150,11 +150,11 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `profile_image` text NOT NULL,
-  `first_name` varchar(20) NOT NULL,
-  `last_name` varchar(20) NOT NULL
+  `email` varchar(30),
+  `phone` varchar(15) ,
+  `profile_image` text,
+  `first_name` varchar(20),
+  `last_name` varchar(20)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
