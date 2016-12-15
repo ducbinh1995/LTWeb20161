@@ -76,6 +76,9 @@
 			foreach($result as $re){
 				array_push($list, new $table_name($re));
 			}
+			if($filter == null){
+				return $list;
+			}
 			return array_filter($list, $filter);
 
 		}
