@@ -15,22 +15,18 @@
       <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
       <li><a class="w3-green" href="#"><i class="fa fa-search"></i></a></li>
       
-      <!-- <div class="w3-dropdown-hover w3-right">
-    	<button class="w3-btn"><img src="image/img_avatar2.png" class="w3-circle w3-margin-right" style="width:35px"></button>
-    	<div class="w3-dropdown-content w3-border" style="right:0">
-      		<a href="#">Link 1</a>
-      		<a href="#">Link 2</a>
-      		<a href="#">Link 3</a>
-    	</div> -->
+ 
     	<li class="w3-dropdown-hover w3-right">
     		<img src="image/img_avatar2.png" class="w3-circle w3-margin-right" style="width:35px">
     		<div class="w3-dropdown-content w3-white w3-card-4" style="right:0">
-      			<a href="#">Link 1</a>
-      			<a href="#">Link 2</a>
-     			 <a href="#">Link 3</a>
+      			<a href="admin.php"><i class="fa fa-user w3-xlarge"></i>  Me</a>
+            <a href="#"><i class="fa fa-users w3-xlarge"></i> Users</a>
+      			<a href="#"><i class="fa fa-sign-out w3-xlarge"></i>Log out</a>
+     			 
     		</div>
     	</li>
-  </div>
+<!--     	<li class="w3-right"><img src="image/img_avatar2.png" class="w3-circle w3-margin-right" style="width:35px"></li>
+ -->  </div>
 
   <div class="w3-clear"></div>
     </ul>
