@@ -20,7 +20,6 @@ class controller {
 		}
 		else
 			include("../view/index.php");
-
 	}
 
 	public stactic logout_control() {
