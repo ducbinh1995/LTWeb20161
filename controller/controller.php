@@ -22,7 +22,7 @@ class controller {
 			include("../view/index.php");
 	}
 
-	public stactic logout_control() {
+	public static function logout_control() {
 		User::logout();
 		include("../view/index.php");
 	}
