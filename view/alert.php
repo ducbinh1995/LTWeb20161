@@ -12,8 +12,8 @@
 		}
 
 		public function getAlert(){
-			$this->alert .= "<script type='text/javascript'>alert('$this->msg');</script>";
-			return $this->alert;
+			$this->alert .= "<script type='text/javascript'>alert('$this->msg');window.location=\"../view/index.php\";</script>";
+			echo $this->alert;
 		}
 	}
 ?>

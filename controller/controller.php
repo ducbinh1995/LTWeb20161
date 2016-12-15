@@ -22,7 +22,6 @@ class controller {
 			echo $login_fail_alert->getAlert();
 		}
 		else{
-			//include("../view/index.php");
 			header("Location: ../view/index.php");
 		}
 	}
