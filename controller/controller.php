@@ -50,7 +50,7 @@ class controller {
 		function test($var) {
 			return $var->owner_id==$_SESSION["current_user"];
 		}
-		$result=Product::find("test");
+		$_POST['curr_usr_product']=Product::find("test");
 		require("../view/list_products.php");
 	}
 }

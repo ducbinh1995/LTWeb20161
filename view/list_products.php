@@ -10,7 +10,7 @@
 	.w3-row-padding img {margin-bottom: 12px}
 </style>
 <!-- header -->
-<?php require("header.php"); ?>
+<?php require("nheader.php"); ?>
 <body>
 <div class="w3-content" style="max-width:2000px;margin-top:40px">
 <!-- siddenav -->
@@ -43,15 +43,17 @@
 	<h1 class="w3-xxxlarge w3-text-green"><b>Products List</b></h1>
 		<ul class="w3-ul w3-card-4">
     <?php
-      foreach($result as $result_key => $result_value) {
+      $result=$_POST['curr_usr_product'];
+      //echo json_encode($result);
+      foreach($result as $result_value) {
 			echo "<li class=\"w3-padding-16\">";
 			echo "<img src=\"image/img_avatar1.png\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\">";
-      			echo "<span class=\"w3-xlarge\">$result=>product_name</span><br>";
+      			echo "<span class=\"w3-xlarge\">".$result_value->product_name."</span><br>";
      			echo "<span>time remain</span>";
 			echo "</li>";
       }
     ?>
-			<li class="w3-padding-16">
+			<!-- <li class="w3-padding-16">
 				<img src="image/img_avatar1.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
       			<span class="w3-xlarge">productname</span><br>
      			<span>time remain</span>
@@ -62,7 +64,7 @@
       			<span class="w3-xlarge">productname</span><br>
      			<span>time remain</span>
      			
-			</li>
+			</li> -->
 		</ul>
 	</div><hr>
 

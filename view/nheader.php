@@ -18,7 +18,7 @@
  
     	<li class="w3-dropdown-hover w3-right">
       <?php
-      require("../model/user.php");
+      require_once("../model/user.php");
   if(!isset($_SESSION)) 
     { 
   session_start();
@@ -34,7 +34,7 @@
             <a href="#"><i class="fa fa-users w3-xlarge"></i> Users</a>
             <a href="../controller/product_control.php?show_product"><i class="fa fa-shopping-cart w3-xlarge"></i> Products</a>
             <a href="../controller/user_control.php?show_user"><i class="fa fa-users w3-xlarge"></i> Users</a>
-            <a href="#"><i class="fa fa-shopping-cart w3-xlarge"></i> Products</a>
+            <a href="../controller/product_control.php?show_product"><i class="fa fa-shopping-cart w3-xlarge"></i> Products</a>
             <a href="#"><i class="fa fa-envelope w3-xlarge"></i> Messages</a>
       			<a href="../controller/user_control.php?logout"><i class="fa fa-sign-out w3-xlarge"></i>Log out</a>
      			 
