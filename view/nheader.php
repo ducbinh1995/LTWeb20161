@@ -1,4 +1,7 @@
-
+<?php  
+  require_once("../controller/controller.php");
+  $list = controller::category_control();
+?>
 <header>
 	<div class="w3-top">
   <ul class="w3-navbar w3-black">
@@ -7,9 +10,15 @@
       <li class="w3-dropdown-hover">
       <a href="#">Categories</a>
       <div class="w3-dropdown-content w3-white w3-card-4">
-        <a href="#">Fashion</a>
+        <!-- <a href="#">Fashion</a>
         <a href="#">Electric</a>
-        <a href="#">Condom</a>
+        <a href="#">Condom</a> -->
+        <?php  
+          for ($i=0; $i < count($list); $i++) {
+            $result = $list[$i]; 
+            echo "<a href=\"index.php?category_id=".$result->category_id."\">".$result->category_name."</a>";
+          }
+        ?>
       </div>
       </li>
       <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
@@ -18,7 +27,7 @@
  
     	<li class="w3-dropdown-hover w3-right">
       <?php
-      require("../model/user.php");
+      require_once("../model/user.php");
   if(!isset($_SESSION)) 
     { 
   session_start();

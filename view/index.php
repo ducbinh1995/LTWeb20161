@@ -23,6 +23,11 @@
   require_once("card.php");
   require_once("../controller/controller.php");
   $list = controller::auction_control();
+  if (isset($_GET["category_id"])) {
+    $category_id = $_GET["category_id"];
+    $list = null;
+    $list = controller::auction_control_with_category($category_id);
+  }
 ?>
 <body>
 
@@ -118,6 +123,8 @@ function showDivs(n) {
       }
       else{
         $page = 1;
+        echo json_encode($list);
+        echo count($list);
         for ($i=($page-1)*8; $i < $page*8-3; $i++) {
           if ($i >= count($list)) {
              break;

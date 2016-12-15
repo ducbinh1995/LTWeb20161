@@ -2,6 +2,7 @@
 require "../view/alert.php";
 require_once("../model/user.php");
 require_once("../model/auction.php");
+require_once("../model/category.php");
 
 class controller {
 	public $user;	
@@ -42,6 +43,19 @@ class controller {
 	public static function auction_control() {
 		$list_auction = Auction::find(null);
 		return $list_auction;
+	}
+
+	public static function auction_control_with_category($category_id){
+		function filter ($var){
+			return $var->product->category_id == $_GET["category_id"];
+		} 
+		$list_auction = Auction::find("filter");
+		return $list_auction;
+	}
+
+	public static function category_control(){
+		$list_category = Category::find(null);
+		return $list_category;
 	}
 }
 ?>
