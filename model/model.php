@@ -72,14 +72,14 @@
 			$statement = $db->prepare("SELECT * FROM `" . $table_name . "`");
 			$statement->execute();
 			$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 			foreach($result as $re){
 				array_push($list, new $table_name($re));
 			}
 			if($filter == null){
 				return $list;
 			}
-			return array_filter($list, $filter);
+			$result = array_filter($list, $filter);
+			return array_values($result);
 
 		}
 
