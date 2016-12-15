@@ -18,8 +18,10 @@ class controller {
 			$login_fail_alert = new Alert("Login Fail");
 			echo $login_fail_alert->getAlert();
 		}
-		else
-			include("../view/index.php");
+		else{
+			//include("../view/index.php");
+			header("Location: ../view/index.php");
+		}
 	}
 
 	public static function logout_control() {
