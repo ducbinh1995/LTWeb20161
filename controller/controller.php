@@ -61,6 +61,7 @@ class controller {
 	public static function category_control(){
 		$list_category = Category::find(null);
 		return $list_category;
+		//header("Location: ../view/create.php");
 	}
 
 	public static function user_product() {
@@ -68,7 +69,7 @@ class controller {
 		function test($var) {
 			return $var->owner_id==$_SESSION["current_user"];
 		}
-		$_POST['curr_usr_product']=Product::find("test");
+		//$_POST['curr_usr_product']=Product::find("test");
 		header("Location:../view/list_products.php");
 	}
 
