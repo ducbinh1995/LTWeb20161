@@ -38,7 +38,7 @@ class User extends Model {
 
 	public static function logout()
 	{
-		session_destroy();
+		unset($_SESSION["current_user"]);
 	}
 } 
 

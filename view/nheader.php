@@ -23,7 +23,7 @@
             <a href="#"><i class="fa fa-users w3-xlarge"></i> Users</a>
             <a href="#"><i class="fa fa-shopping-cart w3-xlarge"></i> Products</a>
             <a href="#"><i class="fa fa-envelope w3-xlarge"></i> Messages</a>
-      			<a href="#"><i class="fa fa-sign-out w3-xlarge"></i>Log out</a>
+      			<a href="../controller/user_control.php?logout"><i class="fa fa-sign-out w3-xlarge"></i>Log out</a>
      			 
     		</div>
     	</li>

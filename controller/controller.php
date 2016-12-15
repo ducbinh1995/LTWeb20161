@@ -25,8 +25,9 @@ class controller {
 	}
 
 	public static function logout_control() {
+		session_start();
 		User::logout();
-		include("../view/index.php");
+		header("Location: ../view/index.php");
 	}
 }
 ?>
