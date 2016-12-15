@@ -16,11 +16,13 @@
 <!-- header -->
 <?php 
   if(isset($_SESSION["current_user"])){
-    require("nheader.php");
+    require_once("nheader.php");
   } else {
-    require("header.php");
+    require_once("header.php");
   }
-  require("card.php");
+  require_once("card.php");
+  require_once("../controller/controller.php");
+  $list = controller::auction_control();
 ?>
 <body>
 
@@ -103,41 +105,63 @@ function showDivs(n) {
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <?php  
-      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$","12/16/2016");
-      echo $newCard->getCard(); 
-      $newCard = new Card("image/steak.jpg","Steak","150.00$","12/18/2016");
-      echo $newCard->getCard();
-      $newCard = new Card("image/cherries.jpg","Cherries","150.00$","12/20/2016");
-      echo $newCard->getCard();
-      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$","12/22/2016");
-      echo $newCard->getCard();
+      if (isset($_GET["page"])) {
+        $page = $_GET["page"];
+        for ($i=($page-1)*8; $i < $page*8-3; $i++) {
+          if ($i >= count($list)) {
+             break;
+          } 
+          $result = $list[$i];
+          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          echo $newCard->getCard();
+        }
+      }
+      else{
+        $page = 1;
+        for ($i=($page-1)*8; $i < $page*8-3; $i++) {
+          if ($i >= count($list)) {
+             break;
+          } 
+          $result = $list[$i];
+          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          echo $newCard->getCard();
+        }
+      }
     ?>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <?php  
-      $newCard = new Card("image/sandwich.jpg","Sandwich","200.00$","12/16/2016");
-      echo $newCard->getCard(); 
-      $newCard = new Card("image/steak.jpg","Steak","150.00$","12/16/2016");
-      echo $newCard->getCard();
-      $newCard = new Card("image/cherries.jpg","Cherries","150.00$","12/16/2016");
-      echo $newCard->getCard();
-      $newCard = new Card("image/wine.jpg","Pasta and Wine","150.00$","12/16/2016");
-      echo $newCard->getCard();
+      if (isset($_GET["page"])) {
+        $page = $_GET["page"];
+        for ($i=($page-1)*8-3; $i < $page*8; $i++) {
+          if ($i >= count($list)) {
+             break;
+          } 
+          $result = $list[$i];
+          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          echo $newCard->getCard();
+        }
+      }
     ?>
   </div>
 
   <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <ul class="w3-pagination">
-      <li><a class="w3-black" href="#">1</a></li>
-      <li><a class="w3-hover-black" href="#">2</a></li>
-      <li><a class="w3-hover-black" href="#">3</a></li>
-      <li><a class="w3-hover-black" href="#">4</a></li>
-      <li><a class="w3-hover-black" href="#">»</a></li>
-    </ul>
-  </div>
+  <?php  
+    $total_pages = ceil(count($list)/8);
+    if (count($list) > 8){
+      echo "<div class=\"w3-center w3-padding-32\">
+            <ul class=\"w3-pagination\">";
+      echo "<li><a class=\"w3-black\" href='index.php?page=1'>".'|<'."</a></li>";
+      for ($i=1; $i<=$total_pages; $i++) { 
+            echo "<a class=\"w3-hover-black\" href='index.php?page=".$i."'>".$i."</a> "; 
+      };
+      echo "<a href='index.php?page=$total_pages'>".'>|'."</a> ";
+      echo "</ul>
+          </div>";
+    }
+  ?>
 </div>
 
 

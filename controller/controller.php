@@ -1,6 +1,7 @@
 <?php
 require "../view/alert.php";
-include_once("../model/user.php");
+require_once("../model/user.php");
+require_once("../model/auction.php");
 
 class controller {
 	public $user;	
@@ -28,6 +29,11 @@ class controller {
 		session_start();
 		User::logout();
 		header("Location: ../view/index.php");
+	}
+
+	public static function auction_control() {
+		$list_auction = Auction::find(null);
+		return $list_auction;
 	}
 }
 ?>

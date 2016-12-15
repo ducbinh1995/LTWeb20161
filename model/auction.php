@@ -1,6 +1,7 @@
 <?php 
 	
-	require("model.php");
+	require_once("model.php");
+	require_once("product.php");
 
 	class Auction extends Model {
 
@@ -19,7 +20,7 @@
  			$product = Product::findById($data["product_id"]);
  			$data["product"] = $product;
  			foreach($data as $key => $value) {
- 				$data->$key = $value;
+ 				$this->$key = $value;
  			}
  		}
 

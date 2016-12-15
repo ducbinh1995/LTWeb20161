@@ -20,7 +20,7 @@
 			$this->card .= "<html><div class = \"w3-quarter\">
 			<img src=$this->image alt = \"$this->name\" style=\"width:100%\">
 			<h3>$this->name</h3>
-			<p>Price to bid: $this->price_to_bid</p>
+			<p>Price to bid: $this->price_to_bid$</p>
 			<p class = \"w3-text-red timer\"></p>
 			</div></html>";
 			return $this->card;
