@@ -9,13 +9,11 @@ class controller {
           $this->user = User::findById($_SESSION["current_user"]);
      } 
 
-	public static function user_control() {
-		if(isset($_POST['usrname'])&&isset($_POST['psw'])) {
+	public static function login_control() {
 			$usrname=$_POST['usrname'];
 			$psw=$_POST['psw'];
 			$data=array("username" => $usrname, "password" => $psw);
 			User::login($data);
-		}
 	}
 }
 ?>
