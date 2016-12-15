@@ -10,13 +10,29 @@
 	.w3-row-padding img {margin-bottom: 12px}
 </style>
 <!-- header -->
-<?php require("header.php"); ?>
+<?php require("nheader.php"); ?>
 <body>
 <div class="w3-content" style="max-width:2000px;margin-top:40px">
 <!-- siddenav -->
 	<nav class="w3-sidenav w3-center w3-small w3-hide-small">
   <!-- Avatar image in top left corner -->
-  <img src="image/img_avatar2.png" style="width:100%">
+  <?php
+      
+  if(!isset($_SESSION)) 
+    { 
+  session_start();
+}
+  $curr = User::findById($_SESSION["current_user"]);
+  $img1 = $curr->profile_image;
+  $u_name = $curr->user_name;
+  $fi_name = $curr->first_name;
+  $la_name = $curr->last_name;
+  $mail = $curr->email;
+  $p_num = $curr->phone;
+  echo "<img src=$img1 class=\"w3-circle w3-margin-right\" style=\"width:100px\"> ";
+  #echo $img1 ;
+  ?>
+  
     <a class="w3-padding-large w3-hover-green" href="#info">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>ABOUT</p>
@@ -36,52 +52,35 @@
 	</nav>
 
 	<!-- page content -->
+
 	<div class="w3-padding-large" id="main">
 	<div class="w3-container" id="info">
 		<h1 class="w3-xxxlarge w3-text-green"><b>User Information</b></h1>
 		<form class="w3-container" action="form.asp">
         <div class="w3-section">
           <label><b>Username</b></label>
-          <input class="w3-input w3-border w3-margin-bottom" type="text"  name="usrname" required>
-          <label><b>Password</b></label>
-          <input class="w3-input w3-border" type="password"  name="psw" required><br>
-          <label><b>Confirm Password</b></label>
-          <input class="w3-input w3-border" type="password"  name="confirmpsw" required><br>
+          <?php
+           echo "<p class=\"lead\"> $u_name </p>" ;
+       		?>
           <label><b>First Name</b></label>
-          <input class="w3-input w3-border " type="text"   name="firstname" required><br>
+          <?php
+           echo "<p class=\"lead\"> $fi_name </p>" ;
+       		?>
           <label><b>Last Name</b></label>
-          <input class="w3-input w3-border " type="text"   name="lastname" required><br>
+          <?php
+           echo "<p class=\"lead\"> $la_name </p>" ;
+       		?>
           <label><b>Email</b></label>
-          <input class="w3-input w3-border " type="email"  name="email" required><br>
+          <?php
+           echo "<p class=\"lead\"> $mail </p>" ;
+       		?>
           <label><b>Phone number</b></label>
-          <input class="w3-input w3-border " type="text"   name="phone" required>
+          <?php
+           echo "<p class=\"lead\"> $p_num </p>" ;
+       		?>
           <button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" type="submit">Update</button>
         </div>
       </form>
-	</div><hr>
-
-	<div class="w3-container" id="users">
-	<h1 class="w3-xxxlarge w3-text-green"><b>Users List</b></h1>
-		<ul class="w3-ul w3-card-4">
-			<li class="w3-padding-16">
-				<img src="image/img_avatar1.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
-      			<span class="w3-xlarge">Username</span><br>
-     			<span>firstname+ lastname</span>
-     			<!-- <button class="w3-btn w3-round-large w3-right w3-red">Edit</button> -->
-			</li>
-			<li class="w3-padding-16">
-				<img src="image/img_avatar3.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
-      			<span class="w3-xlarge">Username</span><br>
-     			<span>firstname+ lastname</span>
-     			<!-- <button class="w3-btn w3-round-large w3-right w3-red">Delete</button> -->
-			</li>
-			<li class="w3-padding-16">
-				<img src="image/img_avatar4.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
-      			<span class="w3-xlarge">Username</span><br>
-     			<span>firstname+ lastname</span>
-     			<!-- <button class="w3-btn w3-round-large w3-right w3-red">Delete</button> -->
-			</li>
-		</ul>
 	</div><hr>
 
 	<div class="w3-container" id="products">
@@ -108,27 +107,7 @@
 		</ul>
 	</div><hr>
 
-	<div class="w3-container" id="messages">
-	<h1 class="w3-xxxlarge w3-text-green"><b>MESSAGES</b></h1>
-		<ul class="w3-ul w3-card-4">
-			<li class="w3-padding-16">
-				<h3><i class="fa fa-bookmark w3-text-red"> subject</i></h3>
-				<p>content</p>
-			</li>
-			<li class="w3-padding-16">
-				<h3><i class="fa fa-bookmark w3-text-red"> subject</i></h3>
-				<p>content</p>
-			</li>
-			<li class="w3-padding-16">
-				<h3><i class="fa fa-bookmark w3-text-red"> subject</i></h3>
-				<p>content</p>
-			</li>
-		</ul>
-	</div>
-
-    </div>
-
-	</div>
+	
 
 </body>
 </html>

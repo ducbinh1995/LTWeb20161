@@ -67,7 +67,7 @@ class controller {
 			return $var->owner_id==$_SESSION["current_user"];
 		}
 		$_POST['curr_usr_product']=Product::find("test");
-		require("../view/list_products.php");
+		header("Location:../view/list_products.php");
 	}
 }
 ?>

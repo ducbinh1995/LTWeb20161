@@ -16,7 +16,13 @@
 <!-- siddenav -->
 	<nav class="w3-sidenav w3-center w3-small w3-hide-small">
   <!-- Avatar image in top left corner -->
-  <img src="image/img_avatar2.png" style="width:100%">
+  <?php
+  
+  $curr = User::findById($_SESSION["current_user"]);
+  $img1 = $curr->profile_image;
+  echo " <img src=\"$img1\" style=\"width:100%\"> " ;
+  #echo $img1 ;
+  ?>
     <a class="w3-padding-large w3-hover-green" href="#info">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>ABOUT</p>
@@ -43,11 +49,16 @@
 	<h1 class="w3-xxxlarge w3-text-green"><b>Products List</b></h1>
 		<ul class="w3-ul w3-card-4">
     <?php
-      $result=$_POST['curr_usr_product'];
+      function test($var) {
+      return $var->owner_id==$_SESSION["current_user"];
+    }
+      $result=Product::find("test");
       //echo json_encode($result);
       foreach($result as $result_value) {
+        $p_img = $result_value->image ;
+      
 			echo "<li class=\"w3-padding-16\">";
-			echo "<img src=\"image/img_avatar1.png\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\">";
+			echo "<img src=$p_img class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\">";
       			echo "<span class=\"w3-xlarge\">".$result_value->product_name."</span><br>";
      			echo "<span>time remain</span>";
 			echo "</li>";
