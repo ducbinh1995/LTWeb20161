@@ -9,7 +9,7 @@ class controller {
           $this->user = User::findById($_SESSION["current_user"]);
      } 
 
-	public function user_control() {
+	public static function user_control() {
 		if(isset($_POST['usrname'])&&isset($_POST['psw'])) {
 			$usrname=$_POST['usrname'];
 			$psw=$_POST['psw'];
