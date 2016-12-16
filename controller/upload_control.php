@@ -1,6 +1,6 @@
 <?php
     $msg=" ";
-    if(isset($_POST['upload'])){
+    if(isset($_POST['image_upload'])){
         //path to store upload file
         $target="view/image/".basename($_FILE['image']['name']);
         //connect database

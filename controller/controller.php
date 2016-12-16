@@ -98,8 +98,10 @@ class controller {
 
 	public static function add_product_control() {
 		session_start();
-		$data=array("product_name"=>$_POST['prd_name'], "description"=>$_POST['descrip'], "category_id"=>$_POST['category_id'], "image"=>$_POST['image_link'], "owner_id"=>$_SESSION["current_user"], "status"=>"waiting");
+		$target="image\p_image\\".basename($_FILES['image']['name']);
+		$data=array("product_name"=>$_POST['prd_name'], "description"=>$_POST['descrip'], "category_id"=>$_POST['category_id'], "image"=>$target, "owner_id"=>$_SESSION["current_user"], "status"=>"waiting");
 		Product::create($data);
+		move_uploaded_file($_FILES['image']['tmp_name'], "..\\view\\".$target);
 		$create_success_alert = new Alert($_POST['prd_name']." has been added!");
 		echo $create_success_alert->getAlert();
 	}
