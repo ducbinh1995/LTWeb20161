@@ -53,14 +53,6 @@ class controller {
 		return $list_auction;
 	}
 
-	public static function auction_control_selling(){
-		function filter_selling ($var){
-			return $var->product->status == "selling";
-		} 
-		$list_auction = Auction::find("filter_selling");
-		return $list_auction;
-	}
-
 	public static function auction_control_with_category($category_id){
 		function filter ($var){
 			return $var->product->category_id == $_GET["category_id"] && $var->product->status == "selling";
@@ -98,10 +90,8 @@ class controller {
 
 	public static function add_product_control() {
 		session_start();
-		$target="image\p_image\\".basename($_FILES['image']['name']);
-		$data=array("product_name"=>$_POST['prd_name'], "description"=>$_POST['descrip'], "category_id"=>$_POST['category_id'], "image"=>$target, "owner_id"=>$_SESSION["current_user"], "status"=>"waiting");
+		$data=array("product_name"=>$_POST['prd_name'], "description"=>$_POST['descrip'], "category_id"=>$_POST['category_id'], "image"=>$_POST['image_link'], "owner_id"=>$_SESSION["current_user"], "status"=>"waiting");
 		Product::create($data);
-		move_uploaded_file($_FILES['image']['tmp_name'], "..\\view\\".$target);
 		$create_success_alert = new Alert($_POST['prd_name']." has been added!");
 		echo $create_success_alert->getAlert();
 	}
