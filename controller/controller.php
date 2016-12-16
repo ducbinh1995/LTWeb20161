@@ -95,5 +95,14 @@ class controller {
 		$create_success_alert = new Alert($_POST['prd_name']." has been added!");
 		echo $create_success_alert->getAlert();
 	}
+
+	public static function show_message() {
+		session_start();
+		function test_msg($var){
+			return $var->user_id == $_SESSION["current_user"];
+		}
+		$_POST["curr_usr_message"] = Message::find("filter");
+		header("Location:../view/message.php");
+	}
 }
 ?>
