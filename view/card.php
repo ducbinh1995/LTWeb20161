@@ -27,7 +27,7 @@
 			<h3>$this->name</h3>
 			<p>Price now: $this->price_to_bid$</p>
 			<p>Belong_to: $str </p>
-			<p class = \"w3-text-red timer\"></p>
+			<p id = ".$this->auction_id." class = \"w3-text-red timer\"></p>
 			</div>";
 			return $this->card;
 		}
