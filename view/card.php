@@ -26,7 +26,7 @@
 			<h3>$this->name</h3>
 			<p>Price now: $this->price_to_bid$</p>
 			<p>Belong_to: hai </p>
-			<p id = ".$auction->product_id." class = \"w3-text-red timer\"></p>
+			<p id = ".$auction->auction_id." class = \"w3-text-red timer\"></p>
 			</div></html>";
 			return $this->card;
 		}
@@ -37,11 +37,15 @@
 		$(document).ready(function(){
 			$(".timer").each(function(){
 				var id = $(this).attr('id');
-				$.post("test.php", {product_id : id}, function(data){
+				$.post("test.php", {auction_id : id}, function(data){
 					$("#"+id).countdown(data, function(event) {
 						$(this).text(
 							event.strftime('%D days %H:%M:%S')
 						);
+					}).on('finish.countdown', function(){
+						$.post("finnish.php", {auction_id: id}, function(data){
+							alert(data)
+						});
 					});
 				});
 			});

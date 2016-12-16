@@ -2,7 +2,7 @@
 	require_once("../model/auction.php");
 	
 	$result = Auction::find(function($var){
-		return $var->product_id == $_POST["product_id"];
+		return $var->auction_id == $_POST["auction_id"];
 	});
 
 	echo($result[0]->end_date);
