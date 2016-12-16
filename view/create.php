@@ -44,28 +44,28 @@
 <div class="w3-padding-large" id="main">
     <div class="w3-container" id="new">
   <h1 class="w3-xxxlarge w3-text-green"><b>New Product</b></h1>
-    <form class="w3-container w3-card-4" action="form.asp">
+    <form class="w3-container w3-card-4" method="post" action="../controller/product_control.php">
         <div class="w3-section">
           <label><b>Product name</b></label>
-          <input class="w3-input w3-border w3-margin-bottom" type="text"  name="#" required>
+          <input class="w3-input w3-border w3-margin-bottom" type="text"  name="prd_name" required>
           <label><b>Descripion</b></label>
-          <textarea class=" w3-border w3-input" name="#" rows="5" cols="40"></textarea><br>
+          <textarea class=" w3-border w3-input" name="descrip" rows="5" cols="40"></textarea><br>
           <label><b>Category</b></label>
-          <select class="w3-select w3-border" name="option">
+          <select class="w3-select w3-border" name="category_id">
         <option value="" disabled selected>Choose your option</option>
         <?php
         $list_category=controller::category_control();
         $i=1;
         foreach($list_category as $category_value) {
-          echo "<option value=".$i.">".$category_value->category_name."</option>";
+          echo "<option value=\"$i\">".$category_value->category_name."</option>";
           $i+=1;
         }
         ?>
           </select>
         <br><br>
           <label><b>Image</b></label>
-          <input class="w3-input w3-border " type="text"   name="#" required><br>
-          <button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" type="submit">Create</button>
+          <input class="w3-input w3-border " type="text"   name="image_link" required><br>
+          <button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" type="submit" name="add_product">Create</button>
         </div>
       </form>
   </div><hr>

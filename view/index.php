@@ -99,10 +99,10 @@ function showDivs(n) {
 
 <!-- pending product -->
 <div class="w3-container w3-section w3-animate-opacity w3-center">
-<div class="w3-tag w3-jumbo w3-red">S</div>
-<div class="w3-tag w3-jumbo w3-yellow">A</div>
-<div class="w3-tag w3-jumbo w3-blue">L</div>
-<div class="w3-tag w3-jumbo">E</div>
+<div class="w3-tag w3-jumbo w3-red">L</div>
+<div class="w3-tag w3-jumbo w3-yellow">I</div>
+<div class="w3-tag w3-jumbo w3-blue">S</div>
+<div class="w3-tag w3-jumbo">T</div>
 </div>
 
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">

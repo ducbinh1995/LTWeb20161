@@ -11,6 +11,7 @@
 </style>
 <!-- header -->
 <?php require("nheader.php"); ?>
+
 <body>
 <div class="w3-content" style="max-width:2000px;margin-top:40px">
 <!-- siddenav -->
@@ -65,6 +66,7 @@
       }
     ?>
 			<!-- <li class="w3-padding-16">
+>>>>>>> fe1c6af8a09f66741bd59afd0ad95841b1042403
 				<img src="image/img_avatar1.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
       			<span class="w3-xlarge">productname</span><br>
      			<span>time remain</span>
@@ -75,6 +77,9 @@
       			<span class="w3-xlarge">productname</span><br>
      			<span>time remain</span>
      			
+<<<<<<< HEAD
+			</li>
+=======
 			</li> -->
 		</ul>
 	</div><hr>
