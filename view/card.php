@@ -35,14 +35,16 @@
 ?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$.post("test.php", function(data){
-				$(".timer").countdown(data, function(event) {
-					$(this).text(
-						event.strftime('%D days %H:%M:%S')
+			$(".timer").each(function(){
+				var id = $(this).attr('id');
+				$.post("test.php", {product_id : id}, function(data){
+					$("#"+id).countdown(data, function(event) {
+						$(this).text(
+							event.strftime('%D days %H:%M:%S')
 						);
+					});
 				});
-			})
-
+			});
 		});
 
 	</script>
