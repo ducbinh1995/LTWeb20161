@@ -23,6 +23,11 @@
   require_once("card.php");
   require_once("../controller/controller.php");
   $list = controller::auction_control();
+  if (isset($_GET["category_id"])) {
+    $category_id = $_GET["category_id"];
+    $list = null;
+    $list = controller::auction_control_with_category($category_id);
+  }
 ?>
 <body>
 
@@ -112,7 +117,7 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
       }
@@ -123,7 +128,7 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
       }
@@ -140,7 +145,7 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->image,$result->product->product_name,$result->current_price,"12/12/2018");
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
       }
@@ -153,10 +158,23 @@ function showDivs(n) {
     if (count($list) > 8){
       echo "<div class=\"w3-center w3-padding-32\">
             <ul class=\"w3-pagination\">";
-      echo "<li><a class=\"w3-black\" href='index.php?page=1'>".'|<'."</a></li>";
+      if (isset($_GET["category_id"])) {
+        echo "<li><a class=\"w3-black\" href='index.php?category_id = ".$_GET["category_id"]."&page=1'>".'|<'."</a></li>";
+      }
+      else {
+        echo "<li><a class=\"w3-black\" href='index.php?page=1'>".'|<'."</a></li>";
+      }
       for ($i=1; $i<=$total_pages; $i++) { 
-            echo "<a class=\"w3-hover-black\" href='index.php?page=".$i."'>".$i."</a> "; 
+        if (isset($_GET["category_id"])) {
+          echo "<a class=\"w3-hover-black\" href='index.php?category_id = ".$_GET["category_id"]."&page=".$i."'>".$i."</a> "; 
+        }
+        else{
+          echo "<a class=\"w3-hover-black\" href='index.php?page=".$i."'>".$i."</a> "; 
+        }
       };
+      if (isset($_GET["category_id"])) {
+        echo "<a href='index.php?category_id = ".$_GET["category_id"]."&page=$total_pages'>".'>|'."</a> ";  
+      }
       echo "<a href='index.php?page=$total_pages'>".'>|'."</a> ";
       echo "</ul>
           </div>";

@@ -5,7 +5,9 @@
 	require('../model/auction.php');
 	require('../model/user.php');
 
-	$user = User::findById(1);
-	$user->updateById(array("first_name" => "hailong"));
-	//echo(json_encode($result[0]));
+	$result = User::find(function($var){
+		return $var->last_name == "nguyen";
+	});
+	//$result = array_values($result); 
+	echo(json_encode($result));
  ?>

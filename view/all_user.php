@@ -62,7 +62,7 @@
 		   foreach($result as $result_key => $result_value){
 		   	$str = $result_value->user_name;
 		   	$img = $result_value->profile_image;
-			echo "<li class=\"w3-padding-16\"> " ;
+			// echo "<li class=\"w3-padding-16\"> " ;
 
 			echo " <img src=$img class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\"> " ;
       		echo " <a href=\"#\" class=\"w3-xlarge\">$str</a><br> " ;

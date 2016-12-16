@@ -1,4 +1,7 @@
-
+<?php  
+  require_once("../controller/controller.php");
+  $list = controller::category_control();
+?>
 <header>
 <div class="w3-top">
   <ul class="w3-navbar w3-black">
@@ -7,9 +10,15 @@
       <li class="w3-dropdown-hover">
       <a href="#">Categories</a>
       <div class="w3-dropdown-content w3-white w3-card-4">
-        <a href="#">Fashion</a>
+        <!-- <a href="index.php?category_id=1">Fashion</a>
         <a href="#">Electric</a>
-        <a href="#">Condom</a>
+        <a href="#">Condom</a> -->
+        <?php  
+          for ($i=0; $i < count($list); $i++) {
+            $result = $list[$i]; 
+            echo "<a href=\"index.php?category_id=".$result->category_id."\">".$result->category_name."</a>";
+          }
+        ?>
       </div>
       </li>
       <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
@@ -61,7 +70,7 @@
         <img src="image/img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
       </div>
 
-      <form class="w3-container" action="form.asp">
+      <form class="w3-container" method="post" action="../controller/user_control.php">
         <div class="w3-section">
           <label><b>Username</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
@@ -77,7 +86,7 @@
           <input class="w3-input w3-border " type="email" placeholder="Email" name="email" required><br>
           <label><b>Phone number</b></label>
           <input class="w3-input w3-border " type="text"  placeholder="Phone Number" name="phone" required>
-          <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">Create</button>
+          <button class="w3-btn-block w3-green w3-section w3-padding" type="submit" name="sign_up">Create</button>
         </div>
       </form>
     </div>
@@ -88,13 +97,13 @@
         <img src="image/img_avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
       </div>
 
-      <form class="w3-container" action="form.asp">
+      <form class="w3-container" method="post" action="../controller/user_control.php">
         <div class="w3-section">
           <label><b>Username</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
           <label><b>Email</b></label>
           <input class="w3-input w3-border" type="email" placeholder="Enter Email" name="email" required>
-          <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">Reset Password </button>
+          <button class="w3-btn-block w3-green w3-section w3-padding" type="submit" name="reset_psw">Reset Password </button>
         </div>
       </form>
     </div>

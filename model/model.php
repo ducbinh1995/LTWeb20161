@@ -72,14 +72,14 @@
 			$statement = $db->prepare("SELECT * FROM `" . $table_name . "`");
 			$statement->execute();
 			$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 			foreach($result as $re){
 				array_push($list, new $table_name($re));
 			}
 			if($filter == null){
 				return $list;
 			}
-			return array_filter($list, $filter);
+			$result = array_filter($list, $filter);
+			return array_values($result);
 
 		}
 
@@ -97,7 +97,7 @@
 			$setStr = substr($setStr, 0, -1);
 
 			$db = DB::getInstance();
-			$statement = $db->prepare("UPDATE `" . static::$tableName . "` SET " . $setStr . " WHERE " . static::$tableName . "_id = " . $this->getId() );
+			$statement = $db->prepare("UPDATE `" . $table_name . "` SET " . $setStr . " WHERE " . $table_name . "_id = " . $this->getId() );
 			$statement->execute($bind_array);
 
 		}
