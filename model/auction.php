@@ -2,10 +2,11 @@
 	
 	require_once("model.php");
 	require_once("product.php");
+	require_once("message.php");
 
 	class Auction extends Model {
 
-		protected $auction_id;
+		public $auction_id;
 		protected $user_id;
 		protected $product_id;
 		public $created;
@@ -37,14 +38,14 @@
 			if(!isset($_SESSION["current_user"]))
 				die("You have to login first");
 
-			if($this->current_price >= $price){
+			if($price < $this->current_price + $this->step){
 
 				die("You have to bid higher");
 
 			} else {
 				Message::create(array("user_id" => $this->user_id, "description" => "Someone pay higher bid than you on your watching auction"));
 
-				$this->updateById(array("current_price" => $price, "auction_id" => $_SESSION["current_user"]));
+				$this->updateById(array("current_price" => $price, "user_id" => $_SESSION["current_user"]));
 			}
 		}
 	}

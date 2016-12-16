@@ -117,7 +117,7 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
       }
@@ -128,7 +128,7 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
       }
@@ -145,7 +145,7 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
-          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->product->product_id);
+          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
       }

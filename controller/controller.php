@@ -1,6 +1,5 @@
 <?php
 require "../view/alert.php";
-require "../model/product.php";
 require_once("../model/user.php");
 require_once("../model/auction.php");
 require_once("../model/category.php");
@@ -9,10 +8,14 @@ require_once("../model/product.php");
 
 class controller {
 	public $user;	
-     public function __construct()  
-     {  
+    public function __construct()  
+    {  
           $this->user = User::findById($_SESSION["current_user"]);
-     } 
+    } 
+
+    private static function get_product_category_id($category_id){
+    	return $category_id;
+    }
 
 	public static function login_control() {
 		$usrname=$_POST['usrname'];
@@ -58,6 +61,11 @@ class controller {
 		return $list_auction;
 	}
 
+	public static function auction_control_id($auction_id){
+		$list_auction = Auction::findById($auction_id);
+		return $list_auction;
+	}
+
 	public static function category_control(){
 		$list_category = Category::find(null);
 		return $list_category;
@@ -74,7 +82,7 @@ class controller {
 
 	public static function product_control(){
 		function filter($var){
-			return $var->product_id = $_GET["product_id"];
+			return $var->product_id == $_GET["product_id"];
 		}
 		$product = Product::find("filter");
 		return $product;
