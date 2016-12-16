@@ -59,9 +59,9 @@
         $p_img = $result_value->image ;
       
 			echo "<li class=\"w3-padding-16\">";
-			echo "<img src=$p_img class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\">";
+			echo "<img src=$p_img class=\"w3-left w3-margin-right\" style=\"width:60px; height:50px\">";
       			echo "<span class=\"w3-xlarge\">".$result_value->product_name."</span><br>";
-     			echo "<span>time remain</span>";
+     			
 			echo "</li>";
       }
     ?>

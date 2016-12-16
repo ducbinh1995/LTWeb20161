@@ -24,8 +24,20 @@
 
   <div class="w3-display-container w3-center">
     <?php  
-      echo "<img src=".$prod->product->image." style=\"width:100%\">";
+      echo "<br><br>" ;
+      echo "<img src=".$prod->product->image." style=\"width:500px\">";
     ?>
+    <form method="POST" action="../controller/del_product.php" >
+    <?php
+      if ($_SESSION["current_user"] == 1) {
+      
+      echo "<br><br>
+       <input type=\"hidden\"  name=\"auction_id\" value= $prod->auction_id /> 
+        <button class=\"w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top\" type = \"submit\"> Delete</button> ";
+      
+      }
+    ?>
+    </form> 
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
     </div>
   </div>

@@ -117,8 +117,11 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
+          
+          if ( $result->product->status != "deactive" ){
           $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
+        }
         }
       }
       else{
@@ -128,9 +131,11 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
+          if ( $result->product->status != "deactive" ){
           $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
+      }
       }
     ?>
   </div>
@@ -145,9 +150,11 @@ function showDivs(n) {
              break;
           } 
           $result = $list[$i];
+          if ( $result->product->status != "deactive" ){
           $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
+      }
       }
     ?>
   </div>

@@ -19,6 +19,10 @@ class Product extends Model {
 	public function getId() {
 		return $this->product_id;
 	}
+
+	public function delete_product(){
+		$this->updateById(array( $status => "deactive" ));
+	}
 }
 
 ?>

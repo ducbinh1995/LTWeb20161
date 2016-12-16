@@ -19,15 +19,16 @@
 
 		public function getCard(){
 			$auction = Auction::findById($this->auction_id);
+			$user = User::findById($auction->user_id);
+			$str = $user->user_name;
 			
-			
-			$this->card .= "<html><div class = \"w3-quarter\">
-			<a href=\"product.php?auction_id=".$this->auction_id."\"><img src=".$this->image." alt = \"$this->name\" style=\"width:100%\"></a>
+			$this->card .= "<div class = \"w3-quarter\">
+			<a href=\"product.php?auction_id=".$this->auction_id."\"><img src=".$this->image." alt = \"$this->name\" style=\"width:100px ; height:100px\"></a>
 			<h3>$this->name</h3>
 			<p>Price now: $this->price_to_bid$</p>
-			<p>Belong_to: hai </p>
-			<p id = ".$auction->auction_id." class = \"w3-text-red timer\"></p>
-			</div></html>";
+			<p>Belong_to: $str </p>
+			<p class = \"w3-text-red timer\"></p>
+			</div>";
 			return $this->card;
 		}
 

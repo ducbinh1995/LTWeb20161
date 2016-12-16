@@ -7,7 +7,7 @@
 	class Auction extends Model {
 
 		public $auction_id;
-		protected $user_id;
+		public $user_id;
 		public $product_id;
 		public $created;
 		public $image;
