@@ -55,7 +55,7 @@ class controller {
 
 	public static function auction_control_with_category($category_id){
 		function filter ($var){
-			return $var->product->category_id == $_GET["category_id"];
+			return $var->product->category_id == $_GET["category_id"] && $var->product->status == "selling";
 		} 
 		$list_auction = Auction::find("filter");
 		return $list_auction;

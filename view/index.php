@@ -27,6 +27,7 @@
     $category_id = $_GET["category_id"];
     $list = null;
     $list = controller::auction_control_with_category($category_id);
+    
   }
 ?>
 <body>
@@ -112,13 +113,13 @@ function showDivs(n) {
     <?php  
       if (isset($_GET["page"])) {
         $page = $_GET["page"];
-        for ($i=($page-1)*8; $i < $page*8-3; $i++) {
+        for ($i=($page-1)*8; $i < ($page-1)*8+4; $i++) {
           if ($i >= count($list)) {
              break;
           } 
           $result = $list[$i];
           
-          if ( $result->product->status != "deactive" ){
+          if ( $result->product->status == "selling" ){
           $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
@@ -126,12 +127,12 @@ function showDivs(n) {
       }
       else{
         $page = 1;
-        for ($i=($page-1)*8; $i < $page*8-3; $i++) {
+        for ($i=($page-1)*8; $i < ($page-1)*8+4; $i++) {
           if ($i >= count($list)) {
              break;
           } 
           $result = $list[$i];
-          if ( $result->product->status != "deactive" ){
+          if ( $result->product->status == "selling" ){
           $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
           echo $newCard->getCard();
         }
@@ -145,16 +146,29 @@ function showDivs(n) {
     <?php  
       if (isset($_GET["page"])) {
         $page = $_GET["page"];
-        for ($i=($page-1)*8-3; $i < $page*8; $i++) {
+        for ($i=($page-1)*8+4; $i < $page*8; $i++) {
           if ($i >= count($list)) {
              break;
           } 
           $result = $list[$i];
-          if ( $result->product->status != "deactive" ){
-          $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
-          echo $newCard->getCard();
+          if ( $result->product->status == "selling" ){
+            $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
+            echo $newCard->getCard();
+          }
         }
       }
+      else{
+        $page = 1;
+        for ($i=($page-1)*8+4; $i < $page*8; $i++) {
+          if ($i >= count($list)) {
+             break;
+          } 
+          $result = $list[$i];
+          if ( $result->product->status == "selling" ){
+            $newCard = new Card($result->product->image,$result->product->product_name,$result->current_price,"12/12/2018",$result->auction_id);
+            echo $newCard->getCard();
+          }
+        }
       }
     ?>
   </div>
@@ -165,12 +179,12 @@ function showDivs(n) {
     if (count($list) > 8){
       echo "<div class=\"w3-center w3-padding-32\">
             <ul class=\"w3-pagination\">";
-      if (isset($_GET["category_id"])) {
-        echo "<li><a class=\"w3-black\" href='index.php?category_id = ".$_GET["category_id"]."&page=1'>".'|<'."</a></li>";
-      }
-      else {
-        echo "<li><a class=\"w3-black\" href='index.php?page=1'>".'|<'."</a></li>";
-      }
+      // if (isset($_GET["category_id"])) {
+      //   echo "<li><a class=\"w3-black\" href='index.php?category_id = ".$_GET["category_id"]."&page=1'>".'|<'."</a></li>";
+      // }
+      // else {
+      //   echo "<li><a class=\"w3-black\" href='index.php?page=1'>".'|<'."</a></li>";
+      // }
       for ($i=1; $i<=$total_pages; $i++) { 
         if (isset($_GET["category_id"])) {
           echo "<a class=\"w3-hover-black\" href='index.php?category_id = ".$_GET["category_id"]."&page=".$i."'>".$i."</a> "; 

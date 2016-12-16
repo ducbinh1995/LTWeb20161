@@ -45,7 +45,7 @@
 						);
 					}).on('finish.countdown', function(){
 						$.post("finnish.php", {auction_id: id}, function(data){
-							alert(data)
+							//alert(data)
 						});
 					});
 				});
