@@ -8,7 +8,7 @@
 
 		public $auction_id;
 		protected $user_id;
-		protected $product_id;
+		public $product_id;
 		public $created;
 		public $image;
 		public $step;
