@@ -53,6 +53,14 @@ class controller {
 		return $list_auction;
 	}
 
+	public static function auction_control_selling(){
+		function filter_selling ($var){
+			return $var->product->status == "selling";
+		} 
+		$list_auction = Auction::find("filter_selling");
+		return $list_auction;
+	}
+
 	public static function auction_control_with_category($category_id){
 		function filter ($var){
 			return $var->product->category_id == $_GET["category_id"] && $var->product->status == "selling";

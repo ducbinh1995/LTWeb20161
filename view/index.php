@@ -22,7 +22,7 @@
   }
   require_once("card.php");
   require_once("../controller/controller.php");
-  $list = controller::auction_control();
+  $list = controller::auction_control_selling();
   if (isset($_GET["category_id"])) {
     $category_id = $_GET["category_id"];
     $list = null;
