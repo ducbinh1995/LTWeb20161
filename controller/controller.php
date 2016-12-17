@@ -44,12 +44,22 @@ class controller {
 	public static function signup_control() {
 		$usrname=$_POST['usrname'];
 		$psw=$_POST['psw'];
-		$data=array("user_name" => $usrname, "password" => $psw);
+		$data=array("user_name" => $usrname, "password" => $psw, "email" => $_POST["email"], "profile_image" => "image\img_avatar2.png");
 		User::create($data);
+		$signup_success_alert = new Alert($usrname." has been signup!");
+		echo $signup_success_alert->getAlert();
 	}
 
 	public static function auction_control() {
 		$list_auction = Auction::find(null);
+		return $list_auction;
+	}
+
+	public static function auction_control_selling(){
+		function filter_selling ($var){
+			return $var->product->status == "selling";
+		} 
+		$list_auction = Auction::find("filter_selling");
 		return $list_auction;
 	}
 
@@ -90,8 +100,10 @@ class controller {
 
 	public static function add_product_control() {
 		session_start();
-		$data=array("product_name"=>$_POST['prd_name'], "description"=>$_POST['descrip'], "category_id"=>$_POST['category_id'], "image"=>$_POST['image_link'], "owner_id"=>$_SESSION["current_user"], "status"=>"waiting");
+		$target="image\p_image\\".basename($_FILES['image']['name']);
+		$data=array("product_name"=>$_POST['prd_name'], "description"=>$_POST['descrip'], "category_id"=>$_POST['category_id'], "image"=>$target, "owner_id"=>$_SESSION["current_user"], "status"=>"waiting");
 		Product::create($data);
+		move_uploaded_file($_FILES['image']['tmp_name'], "..\\view\\".$target);
 		$create_success_alert = new Alert($_POST['prd_name']." has been added!");
 		echo $create_success_alert->getAlert();
 	}

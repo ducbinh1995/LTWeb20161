@@ -36,16 +36,17 @@
 		public function bid($price)
 		{
 			if(!isset($_SESSION["current_user"]))
-				die("You have to login first");
+				 return ("You have to login first");
 
 			if($price < $this->current_price + $this->step){
 
-				die("You have to bid higher");
+				return ("You have to bid higher");
 
 			} else {
 				Message::create(array("user_id" => $this->user_id, "description" => "Someone pay higher bid than you on your watching auction"));
 
 				$this->updateById(array("current_price" => $price, "user_id" => $_SESSION["current_user"]));
+				return "Success";
 			}
 		}
 	}

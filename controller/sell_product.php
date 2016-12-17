@@ -6,6 +6,6 @@
 
 	$product = Product::findById($_POST["product_id"]);
 	$product->updateById(array("status" => "selling"));
-	header("Location: ../view/index");
+	header("Location: ../view/index.php");
 
  ?>

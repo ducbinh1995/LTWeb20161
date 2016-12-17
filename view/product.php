@@ -29,6 +29,7 @@
     ?>
     <form method="POST" action="../controller/del_product.php" >
     <?php
+    if (isset($_SESSION["current_user"])) {
       if ($_SESSION["current_user"] == 1) {
       
       echo "<br><br>
@@ -36,6 +37,8 @@
         <button class=\"w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top\" type = \"submit\"> Delete</button> ";
       
       }
+    }
+      
     ?>
     </form> 
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
@@ -101,19 +104,23 @@ function showDivs(n) {
               echo "<li><b>Bid Increment:</b>".$prod->step."</li>";
               ?>
               <?php
-              if ($_SESSION["current_user"] != 1 && $_SESSION["current_user"] != $prod->product->owner_id ){
-              echo "<label><b>Enter your bid: </b></label>";
-            echo "</ul>";
-            echo "<br>";
-            echo "<div class=\"w3-row\">";
+              if (isset($_SESSION["current_user"])) {
+                if ($_SESSION["current_user"] != 1 && $_SESSION["current_user"] != $prod->product->owner_id ){
+                  echo "<label><b>Enter your bid: </b></label>";
+                  echo "</ul>";
+                  echo "<br>";
+                  echo "<div class=\"w3-row\">";
             
-            echo "<input type=\"hidden\"  name=\"auction_id\" value= $prod->auction_id /> ";
+                  echo "<input type=\"hidden\"  name=\"auction_id\" value= $prod->auction_id /> ";
             
-            echo "<input class=\" w3-col l3 w3-input w3-border w3-round-xlarge\" type=\"text\" name=\"bid_price\">";
-            echo "</div><br>";
-            echo "<button class=\"w3-btn w3-white w3-border w3-border-green w3-round-xlarge\"  type=\"submit\">Bid</button>";
-          }
-            ?>
+                  echo "<input class=\" w3-col l3 w3-input w3-border w3-round-xlarge\" type=\"text\" name=\"bid_price\">";
+                  echo "</div><br>";
+                  echo "<button class=\"w3-btn w3-white w3-border w3-border-green w3-round-xlarge\"  type=\"submit\">Bid</button>";
+                }
+            
+              }
+              ?>
+              
             </div>
             </form>
 </div>

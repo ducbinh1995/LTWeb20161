@@ -11,7 +11,7 @@
 	.w3-row-padding img {margin-bottom: 12px}
 </style>
 <!-- header -->
-<?php require("header.php"); ?>
+<?php require("nheader.php"); ?>
 <body>
 <div class="w3-content" style="max-width:2000px;margin-top:40px">
 <!-- siddenav -->
@@ -44,7 +44,7 @@
 <div class="w3-padding-large" id="main">
     <div class="w3-container" id="new">
   <h1 class="w3-xxxlarge w3-text-green"><b>New Product</b></h1>
-    <form class="w3-container w3-card-4" method="post" action="../controller/product_control.php">
+    <form class="w3-container w3-card-4" method="post" action="../controller/product_control.php" enctype="multipart/form-data">
         <div class="w3-section">
           <label><b>Product name</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text"  name="prd_name" required>
@@ -64,7 +64,7 @@
           </select>
         <br><br>
           <label><b>Image</b></label>
-          <input class="w3-input w3-border " type="text"   name="image_link" required><br>
+          <input class="w3-input w3-border" type="file" name="image"><br>
           <button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" type="submit" name="add_product">Create</button>
         </div>
       </form>

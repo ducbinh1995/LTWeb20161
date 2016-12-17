@@ -5,7 +5,7 @@ class User extends Model {
 
 	protected $user_id;
 	public $user_name;
-	protected $password;
+	public $password;
 	public $email;
 	public $phone;
 	public $profile_image;

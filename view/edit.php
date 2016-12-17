@@ -31,6 +31,7 @@
   $la_name = $curr->last_name;
   $mail = $curr->email;
   $p_num = $curr->phone;
+  $pw = $curr->password;
   echo "<img src=$img1 class=\"w3-circle w3-margin-right\" style=\"width:100px\"> ";
   #echo $img1 ;
   ?>
@@ -62,9 +63,12 @@
         <div class="w3-section">
           <label><b>Username</b></label>
           <?php
-          echo "<input class=\"w3-input w3-border w3-margin-bottom\" type=\"text\"  name=\"username\" value= $u_name > " ;
+           echo "<p class=\"lead\"> $u_name </p>" ;
           ?>
-        
+          <label><b>Password</b></label>
+          <?php
+          echo "<input class=\"w3-input w3-border w3-margin-bottom\" type=\"password\"  name=\"password\" value= $pw> " ;
+          ?>
           <label><b>First Name</b></label>
           <?php
           echo "<input class=\"w3-input w3-border w3-margin-bottom\" type=\"text\"  name=\"first_name\" value= $fi_name> " ;

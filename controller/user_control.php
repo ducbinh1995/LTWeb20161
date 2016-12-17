@@ -1,6 +1,7 @@
 <?php
 	require_once "controller.php";
-	
+	require_once("../model/user.php");
+
 	if(isset($_POST['usrname'])&&isset($_POST['psw'])&&isset($_POST['login'])) {
 		controller::login_control();
 	}
@@ -19,6 +20,10 @@
 	}
 	if(isset($_POST['usrname'])&&isset($_POST['email'])&&isset($_POST['reset_psw'])) {
 		$reset_psw_alert = new Alert("Your Password is 123456");
-			echo $reset_psw_alert->getAlert();
+		$users = User::find(function($var){
+			return $var->user_name == $_POST["usrname"];
+		});
+		$users[0]->updateById(array("password" => "123456"));
+		echo $reset_psw_alert->getAlert();
 	}
 ?>

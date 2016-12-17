@@ -5,16 +5,16 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
-	.w3-sidenav {width: 120px;}
-	#main {margin-left: 120px}
-	.w3-row-padding img {margin-bottom: 12px}
+  .w3-sidenav {width: 120px;}
+  #main {margin-left: 120px}
+  .w3-row-padding img {margin-bottom: 12px}
 </style>
 <!-- header -->
 <?php require("nheader.php"); ?>
 <body>
 <div class="w3-content" style="max-width:2000px;margin-top:40px">
 <!-- siddenav -->
-	<nav class="w3-sidenav w3-center w3-small w3-hide-small">
+  <nav class="w3-sidenav w3-center w3-small w3-hide-small">
   <!-- Avatar image in top left corner -->
   <?php
       
@@ -54,7 +54,7 @@
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>MESSAGES</p>
   </a>
-	</nav>
+  </nav>
   <!-- form -->
 <div class="w3-padding-large" id="main">
   <div class="w3-container" id="info">
@@ -85,7 +85,7 @@
           <input type="number" name="step">
           <br><br>
           <label><b>End date</b></label><br>
-          <input type="date" name="end_date">
+          <input type="datetime-local" name="end_date">
           <br><br>
           <a  href="edit.php"><button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" tpye="submit">Post</button></a>
         </div>

@@ -2,7 +2,7 @@
 	require ("controller.php");
 	if(isset($_GET['show_product']))
 		controller::user_product();
-	if(isset($_POST['add_product'])&&isset($_POST['category_id']))
+	if(isset($_POST['add_product'])&&isset($_POST['category_id'])&&isset($_FILES['image']))
 		controller::add_product_control();
 	else {
 		$create_fail_alert = new Alert("Category is missing! Try again!");
