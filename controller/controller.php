@@ -44,8 +44,10 @@ class controller {
 	public static function signup_control() {
 		$usrname=$_POST['usrname'];
 		$psw=$_POST['psw'];
-		$data=array("user_name" => $usrname, "password" => $psw);
+		$data=array("user_name" => $usrname, "password" => $psw, "email" => $_POST["email"], "profile_image" => "image\img_avatar2.png");
 		User::create($data);
+		$signup_success_alert = new Alert($usrname." has been signup!");
+		echo $signup_success_alert->getAlert();
 	}
 
 	public static function auction_control() {

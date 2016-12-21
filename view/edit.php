@@ -31,6 +31,7 @@
   $la_name = $curr->last_name;
   $mail = $curr->email;
   $p_num = $curr->phone;
+  $pw = $curr->password;
   echo "<img src=$img1 class=\"w3-circle w3-margin-right\" style=\"width:100px\"> ";
   #echo $img1 ;
   ?>
@@ -58,13 +59,16 @@
   <div class="w3-padding-large" id="main">
   <div class="w3-container" id="info">
     <h1 class="w3-xxxlarge w3-text-green"><b>User Information</b></h1>
-     <form class="w3-container" action="../controller/edit_POST.php" method="post">
+     <form class="w3-container" action="../controller/edit_POST.php" method="post" enctype="multipart/form-data">
         <div class="w3-section">
           <label><b>Username</b></label>
           <?php
-          echo "<input class=\"w3-input w3-border w3-margin-bottom\" type=\"text\"  name=\"username\" value= $u_name > " ;
+           echo "<p class=\"lead\"> $u_name </p>" ;
           ?>
-        
+          <label><b>Password</b></label>
+          <?php
+          echo "<input class=\"w3-input w3-border w3-margin-bottom\" type=\"password\"  name=\"password\" value= $pw> " ;
+          ?>
           <label><b>First Name</b></label>
           <?php
           echo "<input class=\"w3-input w3-border w3-margin-bottom\" type=\"text\"  name=\"first_name\" value= $fi_name> " ;
@@ -81,6 +85,9 @@
           <?php
           echo "<input class=\"w3-input w3-border w3-margin-bottom\" type=\"text\"  name=\"phone\" value= $p_num >" ;
           ?>
+          <label><b>New avatar</b></label>
+          <input class="w3-input w3-border" type="file" name="avatar"><br>
+          <button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" type="submit" name="add_product">Create</button>
 
           <button class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge w3-margin-top" type="submit">Update</button>
         </div>

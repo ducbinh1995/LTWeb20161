@@ -21,8 +21,8 @@
         ?>
       </div>
       </li>
-      <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
-      <li><a class="w3-green" href="#"><i class="fa fa-search"></i></a></li>
+      <!-- <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
+      <li><a class="w3-green" href="#"><i class="fa fa-search"></i></a></li> -->
       <li class="w3-right"><button onclick="init();" class="w3-btn"><i class="  fa fa-sign-in"></i> Log In</button></li>
     </ul>
     </div>
@@ -78,14 +78,9 @@
           <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required><br>
           <label><b>Confirm Password</b></label>
           <input class="w3-input w3-border" type="password" placeholder="Confirm Password" name="confirmpsw" required><br>
-          <label><b>First Name</b></label>
-          <input class="w3-input w3-border " type="text"  placeholder="Enter First Name" name="firstname" required><br>
-          <label><b>Last Name</b></label>
-          <input class="w3-input w3-border " type="text"  placeholder="Enter Last Name" name="lastname" required><br>
           <label><b>Email</b></label>
           <input class="w3-input w3-border " type="email" placeholder="Email" name="email" required><br>
-          <label><b>Phone number</b></label>
-          <input class="w3-input w3-border " type="text"  placeholder="Phone Number" name="phone" required>
+                   
           <button class="w3-btn-block w3-green w3-section w3-padding" type="submit" name="sign_up">Create</button>
         </div>
       </form>

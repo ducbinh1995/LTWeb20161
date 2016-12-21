@@ -84,30 +84,6 @@
       
 	</div><hr>
 
-	<div class="w3-container" id="products">
-	<h1 class="w3-xxxlarge w3-text-green"><b>Products List</b></h1>
-		<ul class="w3-ul w3-card-4">
-			<li class="w3-padding-16">
-				<img src="image/img_avatar1.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
-      			<span class="w3-xlarge">productname</span><br>
-     			<span>time remain</span>
-     	
-			</li>
-			<li class="w3-padding-16">
-				<img src="image/img_avatar1.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
-      			<span class="w3-xlarge">productname</span><br>
-     			<span>time remain</span>
-     		
-			</li>
-			<li class="w3-padding-16">
-				<img src="image/img_avatar1.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
-      			<span class="w3-xlarge">productname</span><br>
-     			<span>time remain</span>
-     			
-			</li>
-		</ul>
-	</div><hr>
-
 	
 
 </body>

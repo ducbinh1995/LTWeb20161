@@ -11,7 +11,7 @@
 	.w3-row-padding img {margin-bottom: 12px}
 </style>
 <!-- header -->
-<?php require("header.php"); ?>
+<?php require("nheader.php"); ?>
 <body>
 <div class="w3-content" style="max-width:2000px;margin-top:40px">
 <!-- siddenav -->

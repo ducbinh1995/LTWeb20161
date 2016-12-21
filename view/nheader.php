@@ -21,8 +21,8 @@
         ?>
       </div>
       </li>
-      <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
-      <li><a class="w3-green" href="#"><i class="fa fa-search"></i></a></li>
+      <!-- <li><input type="text" class="w3-input w3-dark-grey" placeholder="Search.."></li>
+      <li><a class="w3-green" href="#"><i class="fa fa-search"></i></a></li> -->
       
  
     	<li class="w3-dropdown-hover w3-right">
@@ -41,7 +41,9 @@
     		<div class="w3-dropdown-content w3-white w3-card-4" style="right:0">
       			<a href="admin.php"><i class="fa fa-user w3-xlarge"></i>  Me</a>
             <a href="../controller/user_control.php?show_user"><i class="fa fa-users w3-xlarge"></i> Users</a>
+            <a href="sell.php"><i class="fa fa-diamond w3-xlarge"></i> Sell</a>
             <a href="../controller/product_control.php?show_product"><i class="fa fa-shopping-cart w3-xlarge"></i> Products</a>
+            <a href="create.php"><i class="fa fa-plus w3-xlarge"></i> Create</a>
             <a href="../controller/message_control.php?show_message"><i class="fa fa-envelope w3-xlarge"></i> Messages</a>
       			<a href="../controller/user_control.php?logout"><i class="fa fa-sign-out w3-xlarge"></i>Log out</a>
      			 

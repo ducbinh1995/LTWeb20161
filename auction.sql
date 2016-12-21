@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2016 at 08:49 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: Dec 21, 2016 at 04:18 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -31,7 +31,6 @@ CREATE TABLE `auction` (
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `image` text NOT NULL,
   `current_price` int(11) NOT NULL,
   `step` int(11) NOT NULL,
   `start_date` date NOT NULL,
@@ -42,9 +41,9 @@ CREATE TABLE `auction` (
 -- Dumping data for table `auction`
 --
 
-INSERT INTO `auction` (`auction_id`, `user_id`, `product_id`, `created`, `image`, `current_price`, `step`, `start_date`, `end_date`) VALUES
-(1, 1, 1, '2016-12-15 06:19:17', 'asd', 2000, 100, '0000-00-00', '0000-00-00'),
-(2, 2, 2, '2016-12-15 06:19:17', 'asd', 20000, 1000, '0000-00-00', '0000-00-00');
+INSERT INTO `auction` (`auction_id`, `user_id`, `product_id`, `created`, `current_price`, `step`, `start_date`, `end_date`) VALUES
+(1, 1, 1, '2016-12-13 09:30:38', 2000, 100, '0000-00-00', '0000-00-00'),
+(2, 2, 2, '2016-12-13 09:30:38', 20000, 1000, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -87,18 +86,6 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `follow`
---
-
-CREATE TABLE `follow` (
-  `follow_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `auction_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `message`
 --
 
@@ -114,7 +101,7 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`message_id`, `user_id`, `created`, `description`) VALUES
-(1, 1, '2016-12-15 06:19:17', 'dep trai vl');
+(1, 1, '2016-12-13 09:30:39', 'dep trai vl');
 
 -- --------------------------------------------------------
 
@@ -137,8 +124,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `description`, `category_id`, `image`, `owner_id`, `status`) VALUES
-(1, 'oppo F1s', 'selfie dep tu nhien', 1, 'dsdsad', 1, 'selling'),
-(2, 'Mac XYZ', 'Mac everywhere', 2, 'gfgf', 2, 'selling');
+(1, 'oppo F1s', 'selfie dep tu nhien', 1, 'image\\p_image\\1.png', 1, 'selling'),
+(2, 'Mac XYZ', 'Mac everywhere', 2, 'image\\p_image\\2.png', 2, 'selling'),
+(3, 'condom', 'safe love', 2, 'image\\p_image\\3.png', 1, 'selling'),
+(5, 'Iphone 6S', 'Dien thoai xin nhat he mat troi', 1, 'xxxxxxxxxxx', 1, 'waiting'),
+(21, 'oo', ';ldmaklams', 1, 'image\\p_image\\13255949_1023298841095144_5223053396155982367_n.jpg', 1, 'waiting'),
+(23, 'KKK', 'djdfsjdfsjjfsd', 2, 'image\\p_image\\OT841_2.jpg', 1, 'waiting'),
+(24, 'osdkdoas', 'ksnfkdsnf', 2, 'image\\p_image\\Capture.PNG', 1, 'waiting');
 
 -- --------------------------------------------------------
 
@@ -150,11 +142,11 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `email` varchar(30),
-  `phone` varchar(15) ,
-  `profile_image` text,
-  `first_name` varchar(20),
-  `last_name` varchar(20)
+  `email` varchar(30) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `profile_image` text NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -162,11 +154,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `password`, `email`, `phone`, `profile_image`, `first_name`, `last_name`) VALUES
-(1, 'lord', '123456', 'hai@mail.com', '0123456789', 'dsadsa', 'hai', 'do'),
-(2, 'binh', '123456', 'binh@mail.com', '0234567891', 'qwe', 'binh', 'phi'),
-(3, 'minh', '123456', 'minh@mail.com', '0345678912', 'asd', 'minh', 'nguyen'),
-(4, 'tho', '123456', 'tho@mail.com', '0456789123', 'zxc', 'tho', 'do'),
-(5, 'toan', '123456', 'toan@mail.com', '0567891234', 'ggg', 'toan', 'nguyen');
+(1, 'lord', '123456', 'hai@mail.com', '0123456789', 'image\\avatar\\13255949_1023298841095144_5223053396155982367_n.jpg', 'hai', 'do'),
+(2, 'binh', '123456', 'binh@mail.com', '0234567891', 'image/avatar/2.png', 'binh', 'phi'),
+(3, 'minh', '123456', 'minh@mail.com', '0345678912', 'image/avatar/3.png', 'minh', 'nguyen'),
+(4, 'tho', '123456', 'tho@mail.com', '0456789123', 'image/avatar/4.png', 'tho', 'do'),
+(5, 'toan', '123456', 'toan@mail.com', '0567891234', 'image/avatar/5.png', 'toan', 'nguyen');
 
 --
 -- Indexes for dumped tables
@@ -192,14 +184,6 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
-
---
--- Indexes for table `follow`
---
-ALTER TABLE `follow`
-  ADD PRIMARY KEY (`follow_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `auction_id` (`auction_id`);
 
 --
 -- Indexes for table `message`
@@ -245,7 +229,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -267,13 +251,6 @@ ALTER TABLE `auction`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
-
---
--- Constraints for table `follow`
---
-ALTER TABLE `follow`
-  ADD CONSTRAINT `follow_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  ADD CONSTRAINT `follow_ibfk_2` FOREIGN KEY (`auction_id`) REFERENCES `auction` (`auction_id`);
 
 --
 -- Constraints for table `message`
